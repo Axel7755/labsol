@@ -30,6 +30,9 @@ body {
     /*background-color: #e0e0e0;*/
     padding: 20px;
 }
+.logo-log{
+    max-width: 100%;
+}
 
 /* Limpiar el flujo de elementos después de las secciones */
 .clearfix::after {
@@ -54,7 +57,7 @@ body {
     left: -50%;
     width: 380px;
     height: 420px;
-    background: linear-gradient(0deg, transparent, transparent, #f6efa7, #f6efa7, #f6efa7);
+    background: linear-gradient(0deg, transparent, transparent, #2a2f4f, #2a2f4f, #2a2f4f);
     z-index: 1;
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
@@ -67,7 +70,7 @@ body {
     left: -50%;
     width: 380px;
     height: 420px;
-    background: linear-gradient(0deg, transparent, transparent, #039f6d, #039f6d, #039f6d);
+    background: linear-gradient(0deg, transparent, transparent, #2a2f4f, #2a2f4f, #2a2f4f);
     z-index: 1;
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
@@ -87,7 +90,7 @@ body {
     left: -50%;
     width: 380px;
     height: 420px;
-    background: linear-gradient(0deg, transparent, transparent, #ef5913, #ef5913, #ef5913);
+    background: linear-gradient(0deg, transparent, transparent, #b14a41, #b14a41, #b14a41);
     z-index: 1;
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
@@ -101,7 +104,7 @@ body {
     left: -50%;
     width: 380px;
     height: 420px;
-    background: linear-gradient(0deg, transparent, transparent, #a2e6ff, #a2e6ff, #a2e6ff);
+    background: linear-gradient(0deg, transparent, transparent, #3362a8, #3362a8, #3362a8);
     z-index: 1;
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
