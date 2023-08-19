@@ -1,5 +1,5 @@
 // add hovered class in selected list item
-let list = document.querySelectorAll('.navigation li');
+/*let list = document.querySelectorAll('.navigation li');
 
 function activeLink() {
   list.forEach((item) =>
@@ -9,7 +9,7 @@ function activeLink() {
 
 list.forEach((item)=>
 item.addEventListener('mouseover', activeLink)); 
-
+*/
 //Menu toggle
 let toggle = document.querySelector('.toggle');
 let navigation = document.querySelector('.navigation');
@@ -20,7 +20,7 @@ toggle.onclick = function(){
   main.classList.toggle('active');
 
 }
-
+/*
 //CALENDARIO
 const currentDate = document.querySelector(".current-date"),
 daysTag = document.querySelector(".days"),
@@ -85,4 +85,4 @@ prevNextIcon.forEach(icon => {
     }
     renderCalendar();
   });
-});
+});*/
