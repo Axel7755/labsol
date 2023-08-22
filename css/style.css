@@ -28,6 +28,8 @@ body{
   position: fixed;
   width: 300px;
   height: 100%;
+  margin-left: 0;
+  padding-left: 0;
   background: var(--blue);
   background: linear-gradient(135deg, #325e9d 0%, #aa7bfa 100%);  
   border-left: 10px solid var(--blue);
@@ -43,6 +45,8 @@ body{
   position: absolute;
   top: 0;
   left: 0;
+  margin: 0;
+  padding: 0;
   width: 100%;
 }
 
