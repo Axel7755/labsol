@@ -32,10 +32,13 @@ body{
   background: linear-gradient(135deg, #325e9d 0%, #aa7bfa 100%);  
   transition: 0.5s;
   overflow: hidden;
+  width: 60px;
 }
 
 .navigation.active{
-  width: 80px;
+  
+  width: 300px;
+ 
 }
 
 .navigation ul{
@@ -134,10 +137,15 @@ body{
 }
 
 /* User */
-.main{
-  position: absolute;
+.main.active{
   width: calc(100% - 300px);
   left: 300px;
+}
+
+.main{
+  position: absolute;
+  width: calc(100% - 60px);
+  left: 60px;
   min-height: 100vh;
   background: var(--white);
   transition: 0.5s;
@@ -312,6 +320,10 @@ header .icons span:last-child{
 
 .days li:hover::before{
   background: #f2f2f2;
+}
+.activo{
+    background: #2a2f4f;
+    color: white;
 }
 
 .days li.active::before{

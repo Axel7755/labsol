@@ -23,6 +23,11 @@
             <ul>
                 <li></li>
                 <li>
+                    <div class="toggle">
+                        <ion-icon name="menu-outline"></ion-icon>
+                    </div>
+                </li>
+                <li>
                     <a href="../index.html">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
@@ -38,7 +43,7 @@
                         <span class="title">Calendario de citas</span>
                     </a>
                 </li>
-                <li>
+                <li class="activo">
                     <a href="./proyectos.html">
                         <span class="icon">
                             <ion-icon name="create-outline"></ion-icon>
@@ -75,9 +80,7 @@
     </div>
     <div class="main">
         <div class="topbar">
-            <div class="toggle">
-                <ion-icon name="menu-outline"></ion-icon>
-            </div>
+
             <!--Search-->
             <div class="search">
                 <label>
@@ -91,10 +94,12 @@
             </div>
         </div>
         <!--grillla de proyectos-->
+        <p class="tittle-seccion">Proyectos:</p>
+
         <div class="container text-center proys-cont">
             <div class="row">
                 <div class="col proy">
-                    <a class="empty" href="./proyectos/baclog.html">
+                    <a class="empty" href="./proyectos/backlog.html">
                         <div class="container text-center">
                             <div class="row">
                                 <div class="col left">
@@ -173,6 +178,32 @@
                         </div>
                     </a>
                 </div>
+            </div>
+        </div>
+
+        <p class="tittle-seccion">Recientes:</p>
+
+        <div class="container text-center proys-cont">
+            <div class="row proy max-hight">
+                <a class="empty" href="./proyectos/baclog.html"></a>
+                <div class="col left">
+                    <img class="img-act" src="../images/Halo infinite.jpeg">
+                </div>
+                <div class="col-11">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col left">
+                                <p class="subtittle-p">Nombre Actividad</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col left">
+                                <p class="text-p">Proyecto</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </a>
             </div>
         </div>
     </div>

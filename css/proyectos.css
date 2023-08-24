@@ -1,3 +1,4 @@
+
 .proys-cont{
     margin-top: 20px;
 }
@@ -13,11 +14,21 @@
     padding: 0;
     max-width: 100%;
 }
+.img-act{
+    padding: 0;
+    max-width: 100%;
+}
 .tittle-p{
     padding: 0;
     color: #2a2f4f;
     font-size: 17px;
     margin-bottom: 4px;
+}
+.tittle-seccion{
+    padding: 0;
+    color: white;
+    font-size: 19px;
+    margin-top: 4px;
 }
 .subtittle-p{
     padding: 0;
@@ -36,4 +47,7 @@
 }
 .left{
     text-align: left;
+}
+.max-hight{
+    height: 45px;
 }
