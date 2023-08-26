@@ -4,10 +4,35 @@
 .pad{
     padding: 3px 0px 3px 0px;
 }
+.element{
+    font-size: 1.2em;
+    margin: 2px 0px 2px 0px;
+    
+}
 .drop:hover{
     background: #d8d8d8;
 }
 .drop:focus{
     background: #d8d8d8;
     border: 0px;
+}
+.element-menu{
+    margin: 4px 4px 4px 4px;
+    padding: 2px 1px 2px 1px;
+    background: #ffffff;
+}
+.bg-grey{
+    background: #f0f0f0;
+}
+.add-button{
+    border: none;
+    background: #d4d4d4;
+    width: 100%;
+    margin: 0;
+    padding: 2px 1px 2px 1px;
+}
+.add-button:hover{
+    border: none;
+    background: #c4c4c4;
+    
 }

@@ -15,10 +15,13 @@
 </head>
 
 <body>
+    <!--Seccion de menu lateral-->
     <div class="container-fluid ">
+        <!--Botton de menu lateral-->
         <button class="btn button-color" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu-desp">
             <i class="bi bi-list"></i>
         </button>
+        <!--Menu lateral-->
         <section class="offcanvas offcanvas-start menu-design" id="menu-desp" tabindex="-1">
             <div class="offcanvas-header" data-bs-theme="dark">
                 <h5 class="tittle-seccion">Nombre Proyecto</h5>
@@ -80,14 +83,15 @@
             </div>
         </section>
     </div>
-
+    <!--Seccion principal-->
     <div class="container text-start layout">
+        <!--Menu superior-->
         <div class="row">
             <div class="col">
                 <p class="tittle-p">Backlog</p>
             </div>
         </div>
-        <div class="row bg-white rounded-4 pad">
+        <div class="row bg-white rounded-3 pad">
             <div class="col-4">
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
@@ -96,39 +100,128 @@
             </div>
             <div class="col-lg-1">
                 <div class="dropdown">
-                    <button class="btn drop dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Versión
+                    <button class="btn drop dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Versión
                     </button>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><a class="dropdown-item" href="#">Menu de versiones</a></li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <input class="form-check-input" type="checkbox" value="" id="version1">
+                                <label class="form-check-label" for="version1">
+                                    Nombre de version
+                                </label>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <input class="form-check-input" type="checkbox" value="" id="version2">
+                                <label class="form-check-label" for="version2">
+                                    Otra version
+                                </label>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <input class="form-check-input" type="checkbox" value="" id="empty-version">
+                                <label class="form-check-label" for="empty-version">
+                                    Incidencias sin version
+                                </label>
+                            </a>
+                        </li>
+                        <li><a class="dropdown-item" - data-bs-toggle="collapse" href="#Menu-versions" role="button"
+                                aria-expanded="false" aria-controls="Menu-versions">Menu de versiones</a></li>
                     </ul>
-                  </div>
+                </div>
             </div>
             <div class="col-lg-1">
                 <div class="dropdown">
-                    <button class="btn drop dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Epic
+                    <button class="btn drop dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Epic
                     </button>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Epic</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <input class="form-check-input" type="checkbox" value="" id="epic">
+                                <label class="form-check-label" for="epic1">
+                                    Nombre de Epic
+                                </label>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <input class="form-check-input" type="checkbox" value="" id="empty-epic">
+                                <label class="form-check-label" for="empty-epic">
+                                    Incidencias sin Epic
+                                </label>
+                            </a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Menu de Epic</a></li>
                     </ul>
-                  </div>
+                </div>
             </div>
             <div class="col-lg-1">
                 <div class="dropdown">
-                    <button class="btn drop dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Filtros
+                    <button class="btn drop dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Filtros
                     </button>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Epic</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <input class="form-check-input" type="checkbox" value="" id="MisIncidencias-f">
+                                <label class="form-check-label" for="MisIncidencias-f">
+                                    Mis incidencias
+                                </label>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <input class="form-check-input" type="checkbox" value="" id="MisIncidencias-f">
+                                <label class="form-check-label" for="MisIncidencias-f">
+                                    Creacion o cambios recientes
+                                </label>
+                            </a>
+                        </li>
                     </ul>
-                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="row layout">
+            <div class="collapse bg-grey collapse-horizontal col rounded-3" id="Menu-versions">
+                <div class="row">
+                    <div class="col">
+                        <p class="mt-3">Versiones</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col element-menu rounded-3">
+                        <p class="element">Nombre de versión</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col element-menu rounded-3">
+                        <p class="element">Nombre de versión</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col element-menu rounded-3">
+                        <p class="element">incidencias sin versión</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col element-menu rounded-3 text-center">
+                        <button class="btn add-button">
+                            <p class="element"><i class="bi bi-plus"></i>  Crear Version</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                col2
+            </div>
+            <div class="col-6">
             </div>
         </div>
     </div>
