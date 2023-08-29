@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Backlog</title>
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!--My CSS-->
+    <link href="../../css/menudesp.css" rel="stylesheet">
+    <link href="../../css/backlog.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--Seccion de menu lateral-->
+    <div class="container-fluid ">
+        <!--Botton de menu lateral-->
+        <button class="btn button-color" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu-desp">
+            <i class="bi bi-list"></i>
+        </button>
+        <!--Menu lateral-->
+        <section class="offcanvas offcanvas-start menu-design" id="menu-desp" tabindex="-1">
+            <div class="offcanvas-header" data-bs-theme="dark">
+                <h5 class="tittle-seccion">Nombre Proyecto</h5>
+                <button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav ">
+                    <li class="nav-item  py-md-1 my-md-1 active">
+                        <a class="nav-link tittle-p" data-bs-toggle="collapse" href="#Planificación" role="button"
+                            aria-expanded="false" aria-controls="Planificación">
+                            <i class="bi bi-ui-radios px-2"></i>Planificación
+                        </a>
+                    </li>
+                    <div class="collapse show" id="Planificación">
+                        <ul class="navbar-nav sub-list">
+                            <li class="nav-item py-md-1 my-md-1 active">
+                                <a class="nav-link subtittle-p" href=""><i
+                                        class="bi bi-menu-button-wide px-2"></i>Backlog</a>
+                            </li>
+                            <li class="nav-item  py-md-1 my-md-1">
+                                <a class="nav-link subtittle-p" href=""><i
+                                        class="bi bi-layout-three-columns px-2"></i>Tablero</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <li class="nav-item  py-md-1 my-md-1">
+                        <a class="nav-link tittle-p" data-bs-toggle="collapse" href="#Equipo" role="button"
+                            aria-expanded="false" aria-controls="Equipo">
+                            <i class="bi bi-people px-2"></i>Equipo
+                        </a>
+                    </li>
+                    <div class="collapse" id="Equipo">
+                        <ul class="navbar-nav sub-list">
+                            <li class="nav-item  py-md-1 my-md-1">
+                                <a class="nav-link subtittle-p" href=""><i class="bi bi-person"></i>Miembro 1</a>
+                            </li>
+                            <li class="nav-item  py-md-1 my-md-1">
+                                <a class="nav-link subtittle-p" href=""><i class="bi bi-person"></i>Miembro 2</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <li class="nav-item  py-md-1 my-md-1">
+                        <a class="nav-link tittle-p" data-bs-toggle="collapse" href="#Proyectos" role="button"
+                            aria-expanded="false" aria-controls="Proyectos">
+                            <i class="bi bi-person-workspace px-2"></i>Proyectos
+                        </a>
+                    </li>
+                    <div class="collapse" id="Proyectos">
+                        <ul class="navbar-nav sub-list">
+                            <li class="nav-item  py-md-1 my-md-1">
+                                <a class="nav-link subtittle-p" href=""><i class="bi bi-book"></i>Proyecto 1</a>
+                            </li>
+                            <li class="nav-item  py-md-1 my-md-1">
+                                <a class="nav-link subtittle-p" href=""><i class="bi bi-book"></i>proyecto 2</a>
+                            </li>
+                        </ul>
+                    </div>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <!--Seccion principal-->
+    <div class="container text-start layout">
+        <!--Menu superior-->
+        <div class="row">
+            <div class="col">
+                <p class="tittle-p">Backlog</p>
+            </div>
+        </div>
+        <div class="row bg-white rounded-3 pad">
+            <div class="col-4">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-light bg-white" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+            </div>
+            <div class="col-lg-1">
+                <div class="dropdown">
+                    <button class="btn drop dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Versión
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <input class="form-check-input" type="checkbox" value="" id="version1">
+                                <label class="form-check-label" for="version1">
+                                    Nombre de version
+                                </label>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <input class="form-check-input" type="checkbox" value="" id="version2">
+                                <label class="form-check-label" for="version2">
+                                    Otra version
+                                </label>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <input class="form-check-input" type="checkbox" value="" id="empty-version">
+                                <label class="form-check-label" for="empty-version">
+                                    Incidencias sin version
+                                </label>
+                            </a>
+                        </li>
+                        <li><a class="dropdown-item" - data-bs-toggle="collapse" href="#Menu-versions" role="button"
+                                aria-expanded="false" aria-controls="Menu-versions">Menu de versiones</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-1">
+                <div class="dropdown">
+                    <button class="btn drop dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Epic
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <input class="form-check-input" type="checkbox" value="" id="epic">
+                                <label class="form-check-label" for="epic1">
+                                    Nombre de Epic
+                                </label>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <input class="form-check-input" type="checkbox" value="" id="empty-epic">
+                                <label class="form-check-label" for="empty-epic">
+                                    Incidencias sin Epic
+                                </label>
+                            </a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Menu de Epic</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-1">
+                <div class="dropdown">
+                    <button class="btn drop dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Filtros
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <input class="form-check-input" type="checkbox" value="" id="MisIncidencias-f">
+                                <label class="form-check-label" for="MisIncidencias-f">
+                                    Mis incidencias
+                                </label>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <input class="form-check-input" type="checkbox" value="" id="MisIncidencias-f">
+                                <label class="form-check-label" for="MisIncidencias-f">
+                                    Creacion o cambios recientes
+                                </label>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row layout">
+            <div class="collapse bg-grey collapse-horizontal col rounded-3" id="Menu-versions">
+                <div class="row">
+                    <div class="col">
+                        <p class="mt-3">Versiones</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col element-menu rounded-3">
+                        <p class="element">Nombre de versión</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col element-menu rounded-3">
+                        <p class="element">Nombre de versión</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col element-menu rounded-3">
+                        <p class="element">incidencias sin versión</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col element-menu rounded-3 text-center">
+                        <button class="btn add-button">
+                            <p class="element"><i class="bi bi-plus"></i>  Crear Version</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                col2
+            </div>
+            <div class="col-6">
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
