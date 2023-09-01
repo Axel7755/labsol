@@ -212,8 +212,9 @@
                 </div>
                 <div class="row">
                     <div class="col element-menu rounded-3 text-center">
-                        <button class="btn add-button">
-                            <p class="element"><i class="bi bi-plus"></i>  Crear Version</p>
+                        <button type="button" class="btn add-button" data-bs-toggle="modal"
+                            data-bs-target="#modalVersion">
+                            <p class="element"><i class="bi bi-plus"></i> Crear Version</p>
                         </button>
                     </div>
                 </div>
@@ -222,6 +223,51 @@
                 col2
             </div>
             <div class="col-6">
+            </div>
+        </div>
+    </div>
+    <!-- Modal de creacion de versiones -->
+    <div class="modal fade" id="modalVersion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Crear versión</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Nombre</label>
+                          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Fecha de inicio</label>
+                                    <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                  </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Fecha de publicación</label>
+                                    <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Dirigente</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Descripcion</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                </div>
             </div>
         </div>
     </div>
