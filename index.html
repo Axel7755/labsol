@@ -23,15 +23,13 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container_nav">
     <div class="navigation">
       <ul>
-        <li></li>
         <li>
-          <div class="toggle">
-            <ion-icon name="menu-outline"></ion-icon>
-          </div>
+          <!--libre-->
         </li>
+
         <li class="activo">
           <a href="./index.html">
             <span class="icon">
@@ -53,25 +51,35 @@
             <span class="icon">
               <ion-icon name="create-outline"></ion-icon>
             </span>
-            <span class="title">proyectos</span>
+            <span class="title">Proyectos - Backlog</span>
+          </a>
+        </li>
+        <li>
+          <a href="./pages/proyectos.html">
+            <span class="icon">
+              <ion-icon name="albums-outline"></ion-icon>
+            </span>
+            <span class="title">Proyectos - Tablero</span>
           </a>
         </li>
         <li>
           <a href="#">
             <span class="icon">
-              <ion-icon name="settings-outline"></ion-icon>
+              <ion-icon name="share-outline"></ion-icon>
             </span>
             <span class="title">Carga de Documentos</span>
           </a>
         </li>
-        <li>
-          <a href="#">
+        <!--Estos 2 ultimos van hasta abajo-->
+        <li class="abajo">
+          <a href="#"> 
             <span class="icon">
               <ion-icon name="settings-outline"></ion-icon>
             </span>
             <span class="title">Configuración</span>
           </a>
         </li>
+
         <li>
           <a href="#">
             <span class="icon">
@@ -87,6 +95,9 @@
   <!--main-->
   <div class="main">
     <div class="topbar">
+      <div class="toggle">
+        <ion-icon name="menu-outline"></ion-icon>
+      </div>
       <!--Search-->
       <div class="search">
         <label>
@@ -100,32 +111,8 @@
       </div>
     </div>
 
-    <!--Mi calendario-->
-    <div class="container-cal">
-      <div class="wrapper">
-        <header>
-          <p class="current-date"></p>
-          <div class="icons">
-            <span id="prev" class="material-symbols-outlined">chevron_left</span>
-            <span id="next" class="material-symbols-outlined">chevron_right</span>
-          </div>
-        </header>
-        <div class="calendar">
-          <ul class="weeks">
-            <li>Do</li>
-            <li>Lu</li>
-            <li>Ma</li>
-            <li>Mi</li>
-            <li>Ju</li>
-            <li>Vi</li>
-            <li>Sa</li>
-          </ul>
-          <ul class="days">
+    <!--Los demas componentes-->
 
-          </ul>
-        </div>
-      </div>
-    </div>
   </div>
 
 

@@ -1,0 +1,49 @@
+p.tittle-board {
+    padding-right: 10px;
+    padding-left: 20px;
+    color: white;
+    font-size: 20px;
+    margin-top: 4px;
+    
+}
+
+.container-board {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paloma {
+    display: inline-block; /* Para que el icono y el texto estén en línea */
+    color: white; /* Cambia el color del icono a blanco */
+    font-size: 25px; /* Cambia el tamaño del icono (ajusta el valor según sea necesario) */
+    vertical-align: middle; /* Alinea verticalmente el icono y el texto */
+    margin-right: 8px; /* Agrega un margen derecho para separar el icono del texto (ajusta el valor según sea necesario) */
+  }
+
+#left,
+#right {
+    width: 300px;
+    min-height: 400px;
+    margin: 20px;
+    border: 2px dashed #fff;
+}
+
+.list {
+    background: #e91e63;
+    height: 60px;
+    margin: 30px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    cursor: grab;
+}
+
+.list ion-icon {
+    width: 35px;
+    height: 20px;
+    margin-right: 5px;
+    margin-left: 1px;
+}
