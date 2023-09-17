@@ -36,3 +36,15 @@
     background: #c4c4c4;
     
 }
+.punteado {
+    border-style: dotted;
+    border-width: 2px;
+    border-color: #797979;
+  }
+.contenido{
+    margin: 0px 1px 0px 1px;
+    min-height: 100px;
+}
+.btnincidencias{
+    margin: 4px 0px 4px 0px;
+}
