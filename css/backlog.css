@@ -48,3 +48,13 @@
 .btnincidencias{
     margin: 4px 0px 4px 0px;
 }
+.add-sprint-button{
+    border: none;
+    background: #d4d4d4;
+    margin: 0;
+}
+.add-sprint-button:hover{
+    border: none;
+    background: #c4c4c4;
+    
+}
