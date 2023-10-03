@@ -1,3 +1,7 @@
+<?php
+session_start();
+include "./php/sessionestado.php";
+?>
 <!DOCTYPE html>
 <html lang="es">
 

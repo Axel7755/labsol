@@ -46,7 +46,7 @@
       </div>
       <div class="links">
         <a href="#">¿Has olvidado tu contraseña?</a>
-        <a href="./Register_solicitante.html">Regístrarse</a>
+        <a href="./Register_solicitante.php">Regístrarse</a>
       </div>
       <input type="submit" value="Inicia sesión">
 
