@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `labsol2`.`alumno` (
   `al_apP` VARCHAR(35) NOT NULL,
   `al_apM` VARCHAR(35) NULL,
   `al_correo` VARCHAR(85) NOT NULL,
-  `al_conthash` VARCHAR(50) NOT NULL,
+  `al_conthash` VARCHAR(65) NOT NULL,
   `al_idinstitucion` INT NOT NULL,
   PRIMARY KEY (`idalumno`, `al_idinstitucion`),
   INDEX `fk_alumno_institucion1_idx` (`al_idinstitucion` ASC) ,
@@ -277,7 +277,7 @@ CREATE TABLE IF NOT EXISTS `labsol2`.`administrador` (
   `ad_apP` VARCHAR(35) NOT NULL,
   `ad_apM` VARCHAR(35) NULL,
   `ad_correo` VARCHAR(85) NOT NULL,
-  `ad_conthash` VARCHAR(50) NOT NULL,
+  `ad_conthash` VARCHAR(65) NOT NULL,
   PRIMARY KEY (`idadministrador`))
 ENGINE = InnoDB;
 

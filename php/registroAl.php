@@ -11,28 +11,57 @@ if (isset($_POST['mandar'])) {
                     $corr = $_POST['correo'];
                     if (isset($_POST['contraseña'])) {
                         if (isset($_POST['institucion'])) {
-                            $sql1 = "SELECT * FROM `solicitante`";
-
-                            $res = $con->query($sql1);
-                            if ($res->num_rows > 0) {
-                                while ($row = $res->fetch_assoc()) {
-                                    $IdUs = ($row["idusuarios"]) + 1;
+                            $flag = false;
+                            $institucion = $_POST['institucion'];
+                            $sqlins = "SELECT * FROM `institucion` WHERE nombre_oficial = '$institucion' ";
+                            $resi = $con->query($sqlins);
+                            if ($resi->num_rows > 0) {
+                                while ($rowi = $resi->fetch_assoc()) {
+                                    $idInstitucion = $rowi["idinstitucion"];
                                 }
+                                $flag = true;
                             } else {
-                                $IdUs = 1;
+                                $sqlins = "SELECT * FROM `institucion`";
+                                $resi = $con->query($sqlins);
+                                if ($resi->num_rows > 0) {
+                                    while ($rowi = $resi->fetch_assoc()) {
+                                        $idInstitucion = ($rowi["idinstitucion"]) + 1;
+                                    }
+                                } else {
+                                    $idInstitucion = 1;
+                                }
+                                $sqlinsins = "INSERT INTO `institucion` (idinstitucion, nombre_oficial) VALUES ('$idInstitucion','$institucion')";
+                                if ($con->query($sqlinsins) == true) {
+                                    $flag = true;
+                                } else {
+                                    $flag = false;
+                                    echo "<br><p style='color: red;'>Error al guardar la institucion de procedencia</p>";
+                                }
                             }
-                            $cont = $_POST['contraseña'];
-                            $conthash = password_hash($cont, PASSWORD_DEFAULT);
-                            $sql = "INSERT INTO `solicitante` (`idsolicitante`, `so_nombre`, `so_apP`, `so_apM`, `so_conthash`, `so_correo`)VALUES
-                            ($IdUs,'$usuario','$app','$apm','$conthash','$corr')";
-                            echo $sql;
-                            if ($con->query($sql) == true) {
-                                header("Location:login.php");
-                            } else {
-                                echo "<br><p style='color: red;'>Error al guardar</p>";
-                            }
+                            if ($flag) {
+                                $sql1 = "SELECT * FROM `alumno`";
 
-                            $con->close();
+                                $res = $con->query($sql1);
+                                if ($res->num_rows > 0) {
+                                    while ($row = $res->fetch_assoc()) {
+                                        $IdUs = ($row["idalumno"]) + 1;
+                                    }
+                                } else {
+                                    $IdUs = 1;
+                                }
+                                $cont = $_POST['contraseña'];
+                                $conthash = password_hash($cont, PASSWORD_DEFAULT);
+                                $sql = "INSERT INTO `alumno` (`idalumno`, `al_nombre`, `al_apP`, `al_apM`, `al_conthash`, `al_correo`, `al_idinstitucion`)VALUES
+                            ($IdUs,'$usuario','$app','$apm','$conthash','$corr','$idInstitucion')";
+                                echo $sql;
+                                if ($con->query($sql) == true) {
+                                    header("Location:login.php");
+                                } else {
+                                    echo "<br><p style='color: red;'>Error al guardar usuario</p>";
+                                }
+
+                                $con->close();
+                            }
                         }
                     } else {
                         echo '<p class="errorl">Error, porfavor llene todos los campos</p>';

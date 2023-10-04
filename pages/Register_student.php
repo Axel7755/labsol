@@ -38,7 +38,7 @@ include "../php/registroAl.php";
 
   <div class="box">
     <span class="borderLine"></span>
-    <form>
+    <form method="POST">
 
       <h2>Registro de Alumnos</h2>
 
@@ -78,7 +78,7 @@ include "../php/registroAl.php";
         <i></i>
       </div>
 
-      <input type="submit" value="Inicia sesión">
+      <input type="submit" name="mandar" value="Inicia sesión">
 
     </form>
   </div>
