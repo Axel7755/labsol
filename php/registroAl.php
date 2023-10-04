@@ -23,7 +23,6 @@ if (isset($_POST['mandar'])) {
                             }
                             $cont = $_POST['contraseña'];
                             $conthash = password_hash($cont, PASSWORD_DEFAULT);
-                            $institucion = $_POST['institucion'];
                             $sql = "INSERT INTO `solicitante` (`idsolicitante`, `so_nombre`, `so_apP`, `so_apM`, `so_conthash`, `so_correo`)VALUES
                             ($IdUs,'$usuario','$app','$apm','$conthash','$corr')";
                             echo $sql;
