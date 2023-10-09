@@ -78,7 +78,7 @@ include "../php/registroAl.php";
         <i></i>
       </div>
 
-      <input type="submit" name="mandar" value="Inicia sesión">
+      <input type="submit" name="mandar" value="Registrar">
 
     </form>
   </div>

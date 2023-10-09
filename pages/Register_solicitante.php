@@ -76,7 +76,7 @@ include "../php/registroSol.php";
                 <a href="./Register_student.php">Regístrarse como alumno</a>
               </div>
 
-            <input type="submit" name="mandar" value="Inicia sesión">
+            <input type="submit" name="mandar" value="Registrar">
 
         </form>
     </div>
