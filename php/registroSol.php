@@ -10,6 +10,8 @@ if (isset($_POST['mandar'])) {
                 if (isset($_POST['correo'])) {
                     $corr = $_POST['correo'];
                     if (isset($_POST['contraseña'])) {
+                        $sqldup = "SELECT * FROM `solicitante` WHERE ";
+
                         $sql1 = "SELECT * FROM `solicitante`";
 
                         $res = $con->query($sql1);
