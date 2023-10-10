@@ -335,3 +335,11 @@ header .icons span:last-child {
   background: #9b59b6;
 
 }
+
+.bg-transparent{
+  border: none;
+    background: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}

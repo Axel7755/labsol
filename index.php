@@ -21,8 +21,7 @@ include "./php/sessionestado.php";
   <!--Bootstrap-->
 
   <!-- Google Font Link Icons-->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 </head>
 
@@ -68,7 +67,7 @@ include "./php/sessionestado.php";
         </li>
         <!--Estos 2 ultimos van hasta abajo-->
         <li class="abajo">
-          <a href="#"> 
+          <a href="#">
             <span class="icon">
               <ion-icon name="settings-outline"></ion-icon>
             </span>
@@ -77,12 +76,15 @@ include "./php/sessionestado.php";
         </li>
 
         <li>
-          <a href="#">
-            <span class="icon">
-              <ion-icon name="log-out-outline"></ion-icon>
-            </span>
-            <span class="title">Salir</span>
-          </a>
+          <form method="post" action="./pages/login.php"><button class="bg-transparent" type="submit" name="cerrars">
+              <a href="#">
+                <span class="icon">
+                  <ion-icon name="log-out-outline"></ion-icon>
+                </span>
+                <span class="title">Salir</span>
+              </a>
+            </button>
+          </form>
         </li>
       </ul>
     </div>

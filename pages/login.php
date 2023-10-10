@@ -1,3 +1,7 @@
+<?php
+// echo'<p>antes</p>';
+include "../php/log.php";
+?>
 <!DOCTYPE html>
 <html>
 
@@ -31,16 +35,16 @@
 
   <div class="box">
     <span class="borderLine"></span>
-    <form>
+    <form method="post">
       <h2>Inicia sesión</h2>
       <div class="inputBox">
-        <input type="text" required="required">
-        <span>Usuario</span>
+        <input type="email" name="correo" required="required">
+        <span>Correo</span>
         <i></i>
       </div>
 
       <div class="inputBox">
-        <input type="password" required="required">
+        <input type="password" name="password" required="required">
         <span>Contraseña</span>
         <i></i>
       </div>
@@ -48,7 +52,7 @@
         <a href="#">¿Has olvidado tu contraseña?</a>
         <a href="./Register_solicitante.php">Regístrarse</a>
       </div>
-      <input type="submit" value="Inicia sesión">
+      <input type="submit" name="mandar" value="Inicia sesión">
 
     </form>
   </div>
