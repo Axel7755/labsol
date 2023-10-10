@@ -28,5 +28,4 @@ $usuario = $_POST['correo'];
     }
   }
 }
-
 ?>
