@@ -1,3 +1,7 @@
+<?php
+session_start();
+include "./php/sessionestado.php";
+?>
 <!doctype html>
 <html lang="es">
 
@@ -33,7 +37,7 @@
         </li>
 
         <li>
-          <a href="../index.html">
+          <a href="../index.php">
             <span class="icon">
               <ion-icon name="home-outline"></ion-icon>
             </span>
@@ -49,7 +53,7 @@
           </a>
         </li>
         <li class="activo">
-          <a href="../pages/proyectos.html">
+          <a href="../pages/proyectos.php">
             <span class="icon">
               <ion-icon name="albums-outline"></ion-icon>
             </span>

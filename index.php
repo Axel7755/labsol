@@ -34,7 +34,7 @@ include "./php/sessionestado.php";
         </li>
 
         <li class="activo">
-          <a href="./index.html">
+          <a href="./index.php">
             <span class="icon">
               <ion-icon name="home-outline"></ion-icon>
             </span>
@@ -50,7 +50,7 @@ include "./php/sessionestado.php";
           </a>
         </li>
         <li>
-          <a href="./pages/proyectos.html">
+          <a href="./pages/proyectos.php">
             <span class="icon">
               <ion-icon name="albums-outline"></ion-icon>
             </span>
