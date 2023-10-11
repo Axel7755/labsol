@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "./php/sessionestado.php";
+include "../php/crearProyecto.php"
 ?>
 <!doctype html>
 <html lang="es">
@@ -20,12 +21,10 @@ include "./php/sessionestado.php";
   <link href="../css/style.css" rel="stylesheet">
   <link href="../css/proyectos.css" rel="stylesheet">
   <!--Bootstrap CSS-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <!-- Google Font Link Icons-->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- Google Font Link Icons-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
@@ -231,51 +230,50 @@ include "./php/sessionestado.php";
     </div>
     <div class="container">
 
-        <button type="button" class="btn" data-bs-toggle="modal"
-        data-bs-target="#CrearProyecto">
-          <p class="tittle-seccion"><i class="bi bi-plus"></i> Crear Proyecto</p>
-        </button>
+      <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#CrearProyecto">
+        <p class="tittle-seccion"><i class="bi bi-plus"></i> Crear Proyecto</p>
+      </button>
     </div>
   </div>
 
   <!-- Modal crear proyecto -->
-  <div class="modal fade" id="CrearProyecto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal fade" id="CrearProyecto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
       <div class="modal-content">
-          <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Crear Proyecto</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Crear Proyecto</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form method="post" enctype="multipart/form-data">
           <div class="modal-body">
-              <form>
-                  <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Nombre del sprint</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                          placeholder="Tablero Sprint 1">
-                  </div>
-                  <div class="mb-3">
-                      <label for="DesSprint1" class="form-label">Imagen del proyecto</label>
-                      <input type="file" name="imagen">
-                  </div>
-              </form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Nombre del proyecto</label>
+              <input required="required" name="cproy_nom" type="text" class="form-control" placeholder="Proyecto">
+            </div>
+            <div class="mb-3">
+              <label for="DesSprint1" class="form-label">Imagen del proyecto</label>
+              <input type="file" name="imagens">
+            </div>
+            <div class="mb-3">
+              <label for="DesSprint1" class="form-label">Comentario </label>
+              <input required="required" name="cproy_comm" type="text" class="form-control" maxlength="85" placeholder="comentario breve">
+            </div>
           </div>
           <div class="modal-footer">
-              <button type="button" class="btn btn-primary">Guardar</button>
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" name="cproy" class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
           </div>
+        </form>
       </div>
+    </div>
   </div>
-</div>
 
   <!-- Scripts de iconos 'ionicons' -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <!--My script-->
   <script src="../js/principal.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 
 </html>
