@@ -16,10 +16,6 @@ include "../php/crearProyecto.php"
   <title>Proyectos</title>
   <!--Favicon - icono de la pestaña-->
   <link rel="icon" type="image/x-icon" href="images/cocinero.png">
-  <!--My CSS-->
-  <link href="./css/style.css" rel="stylesheet">
-  <link href="../css/style.css" rel="stylesheet">
-  <link href="../css/proyectos.css" rel="stylesheet">
   <!--Bootstrap CSS-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
