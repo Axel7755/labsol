@@ -117,21 +117,6 @@ include "../php/crearProyecto.php"
           <?php
           
           ?>
-          <div class="col proy">
-            <a class="empty" href="./proyectos/backlog.html">
-              <div class="container text-center">
-                <div class="row">
-                  <div class="col left">
-                    <img class="img-psrc" src="../images/Halo infinite.jpeg">
-                  </div>
-                  <div class="col-8 left">
-                    <p class="tittle-p">Nombre Proyecto</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col left">
-                    <p class="subtittle-p">Descripcion:</p>
-                    <p class="text-p">redaccion de descripcion breve</p>
                   </div>
                 </div>
               </div>
