@@ -114,6 +114,9 @@ include "../php/crearProyecto.php"
 
       <div class="container text-center proys-cont">
         <div class="row row-cols-3 row-cols-md-4 g-3">
+          <?php
+          
+          ?>
           <div class="col proy">
             <a class="empty" href="./proyectos/backlog.html">
               <div class="container text-center">
