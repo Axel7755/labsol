@@ -11,6 +11,14 @@ switch ($tipo){
         $sqlVproy = "SELECT * FROM `proyecto` WHERE solicitante_idsolicitante = '$id'";
         break;
     case 2:
-        $sqlVproy = "SELECT * FROM `proyecto` ";
+        $sqlVproy = "SELECT * FROM `proyecto`";
         break;
 }
+$res = $con->query($sqlVproy);
+    if ($res->num_rows > 0) {
+        while ($row = $res->fetch_assoc()) {
+            echo "<br><p style='color: red;'>".$row["img"]."</p>";
+        }
+    }else{
+        echo "<br><p style='color: red;'>sin proyectos visibles</p>";
+    }
