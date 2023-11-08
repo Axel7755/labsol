@@ -14,12 +14,12 @@ switch ($tipo){
         $sqlVproy = "SELECT * FROM `proyecto`";
         break;
 }
-//$sqlVproy = "SELECT * FROM `proyecto`";
+$sqlVproy = "SELECT * FROM `proyecto`";
 $res = $con->query($sqlVproy);
     if ($res->num_rows > 0) {
         while ($row = $res->fetch_assoc()) {
             echo '<div class="col proy">
-            <a class="empty" href="./proyectos/backlog.html">
+            <a class="empty" href="./proyectos/backlog.html?proy='.$row["idproyect"].'">
               <div class="container text-center">
                 <div class="row">
                   <div class="col left">
