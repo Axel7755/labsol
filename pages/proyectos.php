@@ -115,94 +115,11 @@ include "../php/crearProyecto.php"
       <div class="container text-center proys-cont">
         <div class="row row-cols-3 row-cols-md-4 g-3">
           <?php
-          
+          include "../php/visualizarProyectos.php";
           ?>
-          <div class="col proy">
-            <a class="empty" href="./proyectos/backlog.html">
-              <div class="container text-center">
-                <div class="row">
-                  <div class="col left">
-                    <img class="img-psrc" src="../images/Halo infinite.jpeg">
-                  </div>
-                  <div class="col-8 left">
-                    <p class="tittle-p">Nombre Proyecto</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col left">
-                    <p class="subtittle-p">Descripcion:</p>
-                    <p class="text-p">redaccion de descripcion breve</p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col proy">
-            <a class="empty" href="">
-              <div class="container text-center">
-                <div class="row">
-                  <div class="col left">
-                    <img class="img-psrc" src="../images/Halo infinite.jpeg">
-                  </div>
-                  <div class="col-8 left">
-                    <p class="tittle-p">Nombre Proyecto</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col left">
-                    <p class="subtittle-p">Descripcion:</p>
-                    <p class="text-p">redaccion de descripcion breve</p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col proy">
-            <a class="empty" href="">
-              <div class="container text-center">
-                <div class="row">
-                  <div class="col left">
-                    <img class="img-psrc" src="../images/Halo infinite.jpeg">
-                  </div>
-                  <div class="col-8 left">
-                    <p class="tittle-p">Nombre Proyecto</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col left">
-                    <p class="subtittle-p">Descripcion:</p>
-                    <p class="text-p">redaccion de descripcion breve</p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col proy">
-            <a class="empty" href="">
-              <div class="container text-center">
-                <div class="row">
-                  <div class="col left">
-                    <img class="img-psrc" src="../images/Halo infinite.jpeg">
-                  </div>
-                  <div class="col-8 left">
-                    <p class="tittle-p">Nombre Proyecto</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col left">
-                    <p class="subtittle-p">Descripcion:</p>
-                    <p class="text-p">redaccion de descripcion breve</p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
         </div>
       </div>
-
     </div>
-
-
     <div class="container">
       <p class="tittle-seccion">Recientes:</p>
 

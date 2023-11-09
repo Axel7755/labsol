@@ -14,10 +14,30 @@ switch ($tipo){
         $sqlVproy = "SELECT * FROM `proyecto`";
         break;
 }
+$sqlVproy = "SELECT * FROM `proyecto`";
 $res = $con->query($sqlVproy);
     if ($res->num_rows > 0) {
         while ($row = $res->fetch_assoc()) {
-            echo "<br><p style='color: red;'>".$row["img"]."</p>";
+            echo '<div class="col proy">
+            <a class="empty" href="./proyectos/backlog.php?proy='.$row["idproyect"].'">
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col left">
+                    <img class="img-psrc" src="'.$row["img"].'">
+                  </div>
+                  <div class="col-8 left">
+                    <p class="tittle-p">'.$row["nombrePr"].'</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col left">
+                    <p class="subtittle-p">Descripcion:</p>
+                    <p class="text-p">'.$row["proyectcol"].'</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>';
         }
     }else{
         echo "<br><p style='color: red;'>sin proyectos visibles</p>";
