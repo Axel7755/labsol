@@ -19,7 +19,7 @@ $res = $con->query($sqlVproy);
     if ($res->num_rows > 0) {
         while ($row = $res->fetch_assoc()) {
             echo '<div class="col proy">
-            <a class="empty" href="./proyectos/backlog.html?proy='.$row["idproyect"].'">
+            <a class="empty" href="./proyectos/backlog.php?proy='.$row["idproyect"].'">
               <div class="container text-center">
                 <div class="row">
                   <div class="col left">

@@ -228,8 +228,8 @@
         </div>
         <div class="row">
             <div class="col text-end btnincidencias">
-                <form>
-                    <button type="sumbmit" class="btn add-sprint-button">
+                <form method="post">
+                    <button type="sumbmit" name="crearSprint" class="btn add-sprint-button">
                         <p class="element"><i class="bi bi-plus"></i> Crear Sprint</p>
                     </button>
                 </form>
