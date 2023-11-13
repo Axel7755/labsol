@@ -1,3 +1,9 @@
+<?php
+session_start();
+include "./php/sessionestado.php";
+//echo"antes";
+include "../../php/crearSprint.php";
+?> 
 <!doctype html>
 <html lang="en">
 
