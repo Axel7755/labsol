@@ -11,7 +11,7 @@ if ($res->num_rows > 0) {
             <div class="row">
                 <div class="col-lg-2">
                     <button class="btn dropdown-toggle" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#SprintId" aria-expanded="false" aria-controls="collapseExample">
+                        data-bs-target="#SprintId'.$row["idsprint"].'" aria-expanded="false" aria-controls="collapseExample">
                         Tablero '.$row["nombre_sp"].'
                     </button>
                 </div>
@@ -32,9 +32,14 @@ if ($res->num_rows > 0) {
                         </button>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item" href="#">
-                                    Eliminar Sprint
-                                </a>
+                            <a class="dropdown-item" href="#">
+                            <form method="post">
+                                <button type="sumbmit" name="eliminarSprint" value="'.$row["idsprint"].'" class="btn bg-transparent margin0">
+                                    
+                                        Eliminar Sprint
+                                </button>
+                            </form>
+                            </a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="#">
@@ -51,7 +56,7 @@ if ($res->num_rows > 0) {
                     </div>
                 </div>
             </div>
-            <div class="row collapse" id="SprintId">
+            <div class="row collapse" id="SprintId'.$row["idsprint"].'">
                 <div class="col">
                     <div class="row punteado rounded-3 contenido">
                         <div class="col margin0">
