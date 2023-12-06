@@ -6,6 +6,7 @@ $sqlVerSrpints = "SELECT * FROM sprint WHERE spr_idproyect = '$proyecto'";
 $res = $con->query($sqlVerSrpints);
 if ($res->num_rows > 0) {
     while ($row = $res->fetch_assoc()){
+        //echo $row["estado"]."estado";
         echo '<div class="row layout bg-grey rounded-3">
         <div class="col element">
             <div class="row">
@@ -21,9 +22,18 @@ if ($res->num_rows > 0) {
                     </button>
                 </div>
                 <div class="col-lg-2">
-                    <button class="btn add-sprint-button" type="button">
-                        Iniciar Sprint
-                    </button>
+                    <form method="post">';
+                        if($row["estado"] == "inactivo"){
+                            echo'<button class="btn add-sprint-button" name="iniciarSprint" value="'.$row["idsprint"].'" type="sumbmit">
+                                    Iniciar Sprint
+                                </button>';
+                        }else{
+                            echo'<button class="btn add-sprint-button" name="iniciarSprint" value="'.$row["idsprint"].'" type="sumbmit">
+                                    Detener Sprint
+                                </button>';
+                        }
+                        echo'
+                    </form>
                 </div>
                 <div class="col text-end">
                     <div class="dropdown">

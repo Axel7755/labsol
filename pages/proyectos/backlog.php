@@ -4,6 +4,7 @@ include "../../php/sessionestado.php";
 //echo"antes";
 include "../../php/crearSprint.php";
 include "../../php/eliminarSprint.php";
+include "../../php/estadoSprint.php";
 ?> 
 <!doctype html>
 <html lang="en">
