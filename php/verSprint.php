@@ -17,7 +17,7 @@ if ($res->num_rows > 0) {
                     </button>
                 </div>
                 <div class="col-lg-2">
-                    <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#EditarSprint1">
+                    <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#EditarSprint'.$row["idsprint"].'">
                         <i class="bi bi-pencil"></i> Editar Sprint
                     </button>
                 </div>

@@ -1,7 +1,7 @@
 <?php
 require "../../php/conexion.php";
 //echo "entra";
-if (isset($_POST['eliminarSprint'])) {
+if (isset($_POST['eliminarSprint']) && !empty($_POST['eliminarSprint'])) {
 
     $proyecto = $_GET['proy'];
     $sprint = $_POST['eliminarSprint'];
