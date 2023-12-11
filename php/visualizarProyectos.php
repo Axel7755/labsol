@@ -14,7 +14,9 @@ switch ($tipo) {
     $sqlVproy = "SELECT * FROM `proyecto`";
     break;
 }
+//Linea solo para pruebas
 $sqlVproy = "SELECT * FROM `proyecto`";
+//
 $res = $con->query($sqlVproy);
 if ($res->num_rows > 0) {
   while ($row = $res->fetch_assoc()) {

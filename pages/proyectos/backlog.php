@@ -5,6 +5,7 @@ include "../../php/sessionestado.php";
 include "../../php/crearSprint.php";
 include "../../php/eliminarSprint.php";
 include "../../php/estadoSprint.php";
+include "../../php/editarSprints.php";
 ?> 
 <!doctype html>
 <html lang="en">
