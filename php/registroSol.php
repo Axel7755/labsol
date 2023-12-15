@@ -20,7 +20,7 @@ if (isset($_POST['mandar'])) {
                             $res = $con->query($sql1);
                             if ($res->num_rows > 0) {
                                 while ($row = $res->fetch_assoc()) {
-                                    $IdUs = ($row["idusuarios"]) + 1;
+                                    $IdUs = ($row["idsolicitante"]) + 1;
                                 }
                             } else {
                                 $IdUs = 1;
