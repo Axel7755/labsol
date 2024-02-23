@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal PDF</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #pdfViewer {
+            width: 100%;
+            height: 80vh; /* Ajusta la altura según tus necesidades */
+        }
+    </style>
+</head>
+<body>
+
+<button onclick="openModal()">Abrir Modal</button>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <!-- Input para adjuntar PDF -->
+        <input type="file" id="pdfInput" accept=".pdf">
+
+        <canvas id="pdfViewer"></canvas>
+        <button onclick="viewPDF()">Visualizar</button>
+        <a id="downloadLink" download="archivo.pdf" href="#" target="_blank"><button>Descargar</button></a>
+    </div>
+</div>
+
+<script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+<script>
+    function openModal() {
+        var modal = document.getElementById('modal');
+        modal.style.display = 'block';
+    }
+
+    function closeModal() {
+        var modal = document.getElementById('modal');
+        modal.style.display = 'none';
+    }
+
+    function viewPDF() {
+        var pdfViewer = document.getElementById('pdfViewer');
+        var downloadLink = document.getElementById('downloadLink');
+        var pdfInput = document.getElementById('pdfInput');
+
+        // Obtener el archivo seleccionado
+        var selectedFile = pdfInput.files[0];
+
+        // Mostrar el archivo en el visor de PDF
+        if (selectedFile) {
+            var fileURL = URL.createObjectURL(selectedFile);
+
+            // Cargar y mostrar el PDF usando PDF.js
+            pdfjsLib.getDocument(fileURL).promise.then(function(pdfDoc) {
+                renderPDF(pdfDoc, pdfViewer);
+                downloadLink.href = fileURL;
+            });
+        }
+    }
+
+    function renderPDF(pdfDoc, pdfViewer) {
+        pdfDoc.getPage(1).then(function(page) {
+            var canvas = document.getElementById('pdfViewer');
+            var context = canvas.getContext('2d');
+            var viewport = page.getViewport({ scale: 1.5 });
+
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+
+            page.render({ canvasContext: context, viewport: viewport });
+        });
+    }
+</script>
+</body>
+</html>

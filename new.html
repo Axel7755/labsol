@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caja Provisional</title>
+    <style>
+        /* Estilos para la caja */
+        #miCaja {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="miCaja">
+        <h2>Título de la Caja</h2>
+        <p>Contenido de la caja provisional.</p>
+    </div>
+
+    <input type="text" class="nuevoTitulo" value="En curso" readonly>
+
+
+    <label for="nuevoTitulo">Nuevo Título:</label>
+    <input type="text" id="nuevoTitulo" placeholder="Escribe el nuevo título" onkeyup="cambiarConEnter(event)">
+    
+    <script>
+        function cambiarConEnter(event) {
+            if (event.key === 'Enter') {
+                // Obtén la referencia al elemento por su id
+                var miCaja = document.getElementById("miCaja");
+                
+                // Obtén el nuevo título desde el input
+                var nuevoTitulo = document.getElementById("nuevoTitulo").value;
+
+                // Modifica el título de la caja
+                miCaja.querySelector('h2').innerText = nuevoTitulo;
+            }
+        }
+    </script>
+
+</body>
+</html>
