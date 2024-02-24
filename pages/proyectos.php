@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "./php/sessionestado.php";
+include "../php/sessionestado.php";
 include "../php/crearProyecto.php";
 ?>
 <!doctype html>
@@ -77,12 +77,15 @@ include "../php/crearProyecto.php";
         </li>
 
         <li>
-          <a href="#">
-            <span class="icon">
-              <ion-icon name="log-out-outline"></ion-icon>
-            </span>
-            <span class="title">Salir</span>
-          </a>
+          <form method="post" action="./login.php"><button class="bg-transparent" type="submit" value="2" name="cerrars">
+              <a href="#">
+                <span class="icon">
+                  <ion-icon name="log-out-outline"></ion-icon>
+                </span>
+                <span class="title">Salir</span>
+              </a>
+            </button>
+          </form>
         </li>
       </ul>
     </div>
