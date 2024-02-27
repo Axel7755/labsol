@@ -77,15 +77,12 @@ include "../php/crearProyecto.php";
         </li>
 
         <li>
-          <form method="post" action="./login.php"><button class="bg-transparent" type="submit" value="2" name="cerrars">
-              <a href="#">
-                <span class="icon">
-                  <ion-icon name="log-out-outline"></ion-icon>
-                </span>
-                <span class="title">Salir</span>
-              </a>
-            </button>
-          </form>
+          <a href="#">
+            <span class="icon">
+              <ion-icon name="log-out-outline"></ion-icon>
+            </span>
+            <span class="title">Salir</span>
+          </a>
         </li>
       </ul>
     </div>
