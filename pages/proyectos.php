@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "./php/sessionestado.php";
+include "../php/sessionestado.php";
 include "../php/crearProyecto.php";
 ?>
 <!doctype html>

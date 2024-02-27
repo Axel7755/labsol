@@ -47,7 +47,53 @@ if (isset($_POST['cproy'])) {
                 VALUES ('$Idres','$proy','$proycom')";
             }
             if ($con->query($sqlproy) == true) {
-                header("Location:./proyectos.php");
+
+                $sqlEstAl = "SELECT 'idestadoAl' FROM `estadoAl`";
+                $resEstAl = $con->query($sqlEstAl);
+                if ($resEstAl->num_rows > 0) {
+                    while ($rowresEstAl = $resEstAl->fetch_assoc()) {
+                        $IdresEstAl = ($rowresEstAl["idestadoAl"]) + 1;
+                    }
+                } else {
+                    $IdresEstAl = 1;
+                }
+                
+                $sqlCrearEstAl1 = "INSERT INTO `estadoAl` (idestadoAl,estadoAl,estAl_idproyect)
+                VALUES ('$IdresEstAl','Por hacer','$Idres'); ";
+                $IdresEstAl++;
+                
+                $sqlCrearEstAl2 = "INSERT INTO `estadoAl` (idestadoAl,estadoAl,estAl_idproyect)
+                VALUES ('$IdresEstAl','En curso','$Idres'); ";
+                $IdresEstAl++;
+
+                $sqlCrearEstAl3 = "INSERT INTO `estadoAl` (idestadoAl,estadoAl,estAl_idproyect)
+                VALUES ('$IdresEstAl','Listo','$Idres'); ";
+
+                $sqlEst = "SELECT 'idestadoAdm' FROM `estadoAdm`";
+                $resEst = $con->query($sqlEstAl);
+                if ($resEst->num_rows > 0) {
+                    while ($rowresEst = $resEst->fetch_assoc()) {
+                        $IdresEst = ($rowresEst["idestadoAdm"]) + 1;
+                    }
+                } else {
+                    $IdresEst = 1;
+                }
+
+                $sqlCrearEstAdm1 = "INSERT INTO `estadoAdm` (idestadoAdm,estadoAd,estAdm_idproyect)
+                VALUES ('$IdresEst','En revision','$Idres'); ";
+                $IdresEst++;
+
+                $sqlCrearEstAdm2 = "INSERT INTO `estadoAdm` (idestadoAdm,estadoAd,estAdm_idproyect)
+                VALUES ('$IdresEst','Completado','$Idres'); ";
+                $IdresEst++;
+                
+                $sqlCrearEst = $sqlCrearEstAl1.$sqlCrearEstAl2.$sqlCrearEstAl3.$sqlCrearEstAdm1.$sqlCrearEstAdm2;
+                echo $sqlCrearEst;
+                if ($con->multi_query($sqlCrearEst) == true) {
+                    header("Location:./proyectos.php");
+                }else{
+                    echo "<br><p style='color: rgb(136, 1, 1);'>Error en la creación de estados</p>";
+                }
             }else{
                 echo "<br><p style='color: rgb(136, 1, 1);'>Error al guardar</p>";            
             }
