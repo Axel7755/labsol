@@ -21,7 +21,7 @@ include "../php/crearProyecto.php";
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <!-- Google Font Link Icons-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <!--My CSS-->
+   <!--My CSS-->
   <link href="../css/style.css" rel="stylesheet">
   <link href="../css/proyectos.css" rel="stylesheet">
 </head>
@@ -77,15 +77,12 @@ include "../php/crearProyecto.php";
         </li>
 
         <li>
-          <form method="post" action="./login.php"><button class="bg-transparent" type="submit" value="2" name="cerrars">
-              <a href="#">
-                <span class="icon">
-                  <ion-icon name="log-out-outline"></ion-icon>
-                </span>
-                <span class="title">Salir</span>
-              </a>
-            </button>
-          </form>
+          <a href="#">
+            <span class="icon">
+              <ion-icon name="log-out-outline"></ion-icon>
+            </span>
+            <span class="title">Salir</span>
+          </a>
         </li>
       </ul>
     </div>
