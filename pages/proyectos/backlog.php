@@ -162,8 +162,9 @@ include "../../php/editarSprints.php";
                     <h5 class="modal-title" id="staticBackdropLabel">Crear incidencia</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <form>
+                <form>
+                    <div class="modal-body">
+                    
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Nombre de incidencia</label>
                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
@@ -180,6 +181,14 @@ include "../../php/editarSprints.php";
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Descripcion</label>
                             <textarea name="DesSprint1" id="" cols="45" rows="10"></textarea>
+                        </div>
+                        <div class="subincidencias-groupIdSprint">
+
+                        </div>
+                        <div class="mb-3">
+                            <button type="button" class="btn add-sprint-button">
+                                <p onclick="addInput('IdSprint')" class="element"><i class="bi bi-plus"></i>Agregar subincidencia</p>
+                            </button>
                         </div>
                         <div class="mb-3">
                             <label for="t-incidencia" class="form-label">Informador</label>
@@ -214,12 +223,13 @@ include "../../php/editarSprints.php";
                                 <option value="1">Sprint 2</option>
                             </select>
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Crear</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                </div>
+                    
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Crear</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -293,6 +303,7 @@ include "../../php/editarSprints.php";
             </div>
         </div>
     </div>
+    <script src="../../js/subincidencias.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
