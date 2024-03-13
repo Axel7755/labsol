@@ -113,7 +113,7 @@ if ($res->num_rows > 0) {
                     <div class="row">
                         <div class="col btnincidencias">
                             <button type="button" class="btn add-button" data-bs-toggle="modal"
-                                data-bs-target="#incidenciaCrear">
+                                data-bs-target="#incidenciaCrear'.$row["idsprint"].'">
                                 <p class="element"><i class="bi bi-plus"></i> Crear incidencia</p>
                             </button>
                         </div>

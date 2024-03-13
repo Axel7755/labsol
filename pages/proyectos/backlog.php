@@ -33,7 +33,16 @@ include "../../php/editarSprints.php";
         <!--Menu lateral-->
         <section class="offcanvas offcanvas-start menu-design" id="menu-desp" tabindex="-1">
             <div class="offcanvas-header" data-bs-theme="dark">
-                <h5 class="tittle-seccion">Nombre Proyecto</h5>
+                <?php
+                $proyecto = $_GET['proy'];
+                $sqlVproy = "SELECT nombrePr FROM `proyecto` WHERE idproyect = '$proyecto'";
+                $res = $con->query($sqlVproy);
+                if ($res->num_rows > 0) {
+                  while ($row = $res->fetch_assoc()) {
+                    echo'<h5 class="tittle-seccion">'. $row["nombrePr"] .'</h5>';
+                  }
+                }
+                ?>
                 <button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="offcanvas"></button>
             </div>
             <div class="offcanvas-body">
@@ -69,6 +78,9 @@ include "../../php/editarSprints.php";
                             </li>
                             <li class="nav-item  py-md-1 my-md-1">
                                 <a class="nav-link subtittle-p" href=""><i class="bi bi-person"></i>Miembro 2</a>
+                            </li>
+                            <li class="nav-item  py-md-1 my-md-1">
+                                <a class="nav-link subtittle-p" data-bs-toggle="modal" data-bs-target="#AgregarMiembro" href=""><i class="bi bi-plus"></i>Agregar Miembro</a>
                             </li>
                         </ul>
                     </div>
@@ -154,6 +166,10 @@ include "../../php/editarSprints.php";
     ?>
 
     <!-- Modal crear incidencia -->
+    <?php
+        include "../../php/modalCrearIncidencia.php"; 
+    ?>
+    <!-- Modal editar incidencia -->
     <div class="modal fade" id="incidenciaCrear" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">

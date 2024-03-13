@@ -19,6 +19,9 @@ function addInput(idSprint){
     name.placeholder = "Nombre de subincidencia";
     name.name="nombreSub"+i;
 
+    const labelDesc = document.createElement("label");
+    labelDesc.textContent="Descripcion";
+
     const descripcion = document.createElement("textarea");
     descripcion.cols="45";
     descripcion.rows="10";
@@ -34,6 +37,7 @@ function addInput(idSprint){
 
     const flex=document.createElement("div");
     flex.className="flex";
+    input.appendChild(flex);
 
     const invi = document.createElement("input");;
 
@@ -49,8 +53,9 @@ function addInput(idSprint){
         invi.value=i;
     }
 
-    input.appendChild(flex);
+    
     flex.appendChild(name);
+    flex.appendChild(labelDesc);
     flex.appendChild(descripcion);
     flex.appendChild(btn);
     flex.appendChild(invi);
