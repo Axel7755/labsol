@@ -26,54 +26,6 @@ function addInput(idSprint){
     //descripcion.placeholder = "Digite su cantidad";
     descripcion.name="descrip"+i;
 
-    //add medida
-    const medida = document.createElement("select");
-    medida.type="select";
-    medida.name="medida"+i;
-
-    //Opciones en el select
-    
-    var opciones = document.createElement("option");
-    opciones.value="L"
-    opciones.text="L"
-    medida.add(opciones);
-    var opciones = document.createElement("option");
-    opciones.value="ml"
-    opciones.text="ml"
-    medida.add(opciones);
-    var opciones = document.createElement("option");
-    opciones.value="Kg"
-    opciones.text="Kg"
-    medida.add(opciones);
-    var opciones = document.createElement("option");
-    opciones.value="g"
-    opciones.text="g"
-    medida.add(opciones);
-    var opciones = document.createElement("option");
-    opciones.value="mg"
-    opciones.text="mg"
-    medida.add(opciones);
-    var opciones = document.createElement("option");
-    opciones.value="tz"
-    opciones.text="tz"
-    medida.add(opciones);
-    var opciones = document.createElement("option");
-    opciones.value="pz"
-    opciones.text="pz"
-    medida.add(opciones);
-    var opciones = document.createElement("option");
-    opciones.value="paq"
-    opciones.text="paq"
-    medida.add(opciones);
-
-    var placeholderOption = document.createElement("option");
-    placeholderOption.value='';
-    placeholderOption.text="Seleccione una op";
-    placeholderOption.disabled=true;
-    placeholderOption.selected=true;
-
-
-
     const btn=document.createElement("a");
     btn.className = "delete";
     btn.innerHTML = "&times";
@@ -100,7 +52,6 @@ function addInput(idSprint){
     input.appendChild(flex);
     flex.appendChild(name);
     flex.appendChild(descripcion);
-    flex.appendChild(medida);
     flex.appendChild(btn);
     flex.appendChild(invi);
 
