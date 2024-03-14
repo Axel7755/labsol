@@ -17,11 +17,13 @@ include "../php/crearProyecto.php";
   <!--Favicon - icono de la pestaña-->
   <link rel="icon" type="image/x-icon" href="images/cocinero.png">
   <!--Bootstrap CSS-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <!-- Google Font Link Icons-->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-   <!--My CSS-->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!--My CSS-->
   <link href="../css/style.css" rel="stylesheet">
   <link href="../css/proyectos.css" rel="stylesheet">
 </head>
@@ -76,12 +78,16 @@ include "../php/crearProyecto.php";
           </a>
         </li>
         <li>
-          <a href="#">
-            <span class="icon">
-              <ion-icon name="log-out-outline"></ion-icon>
-            </span>
-            <span class="title">Salir</span>
-          </a>
+          <form method="post" action="./login.php"><button class="bg-transparent" type="submit" value="1"
+              name="cerrars">
+              <a href="#">
+                <span class="icon">
+                  <ion-icon name="log-out-outline"></ion-icon>
+                </span>
+                <span class="title">Salir</span>
+              </a>
+            </button>
+          </form>
         </li>
       </ul>
     </div>
@@ -155,7 +161,8 @@ include "../php/crearProyecto.php";
   </div>
 
   <!-- Modal crear proyecto -->
-  <div class="modal fade" id="CrearProyecto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="CrearProyecto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -174,7 +181,8 @@ include "../php/crearProyecto.php";
             </div>
             <div class="mb-3">
               <label for="DesSprint1" class="form-label">Comentario </label>
-              <input required="required" name="cproy_comm" type="text" class="form-control" maxlength="85" placeholder="comentario breve">
+              <input required="required" name="cproy_comm" type="text" class="form-control" maxlength="85"
+                placeholder="comentario breve">
             </div>
           </div>
           <div class="modal-footer">
@@ -191,7 +199,9 @@ include "../php/crearProyecto.php";
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <!--My script-->
   <script src="../js/principal.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
