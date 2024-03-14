@@ -75,7 +75,6 @@ include "../php/crearProyecto.php";
             <span class="title">Configuración</span>
           </a>
         </li>
-
         <li>
           <a href="#">
             <span class="icon">
