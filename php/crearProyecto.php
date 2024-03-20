@@ -48,7 +48,7 @@ if (isset($_POST['cproy'])) {
             }
             if ($con->query($sqlproy) == true) {
 
-                $sqlEstAl = "SELECT 'idestadoAl' FROM `estadoAl`";
+                $sqlEstAl = "SELECT 'idestadoAl' FROM `estadoAl` WHERE estAl_idproyect='$Idres'";
                 $resEstAl = $con->query($sqlEstAl);
                 if ($resEstAl->num_rows > 0) {
                     while ($rowresEstAl = $resEstAl->fetch_assoc()) {

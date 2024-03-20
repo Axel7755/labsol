@@ -74,12 +74,9 @@ include "../../php/agregarAlumnoProy.php";
                     </li>
                     <div class="collapse" id="Equipo">
                         <ul class="navbar-nav sub-list">
-                            <li class="nav-item  py-md-1 my-md-1">
-                                <a class="nav-link subtittle-p" href=""><i class="bi bi-person"></i>Miembro 1</a>
-                            </li>
-                            <li class="nav-item  py-md-1 my-md-1">
-                                <a class="nav-link subtittle-p" href=""><i class="bi bi-person"></i>Miembro 2</a>
-                            </li>
+                            <?php
+                            include "../../php/verEquipo.php"
+                            ?>
                             <li class="nav-item  py-md-1 my-md-1">
                                 <a class="nav-link subtittle-p" data-bs-toggle="modal" data-bs-target="#AgregarMiembro"
                                     href=""><i class="bi bi-plus"></i>Agregar Miembro</a>
