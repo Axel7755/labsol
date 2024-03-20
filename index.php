@@ -76,7 +76,7 @@ include "./php/sessionestado.php";
         </li>
 
         <li>
-          <form method="post" action="./pages/login.php"><button class="bg-transparent" type="submit" name="cerrars">
+          <form method="post" action="./pages/login.php"><button class="bg-transparent" type="submit" value="1" name="cerrars">
               <a href="#">
                 <span class="icon">
                   <ion-icon name="log-out-outline"></ion-icon>

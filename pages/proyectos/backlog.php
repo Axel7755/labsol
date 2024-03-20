@@ -6,7 +6,8 @@ include "../../php/crearSprint.php";
 include "../../php/eliminarSprint.php";
 include "../../php/estadoSprint.php";
 include "../../php/editarSprints.php";
-?> 
+include "../../php/agregarAlumnoProy.php";
+?>
 <!doctype html>
 <html lang="en">
 
@@ -33,7 +34,16 @@ include "../../php/editarSprints.php";
         <!--Menu lateral-->
         <section class="offcanvas offcanvas-start menu-design" id="menu-desp" tabindex="-1">
             <div class="offcanvas-header" data-bs-theme="dark">
-                <h5 class="tittle-seccion">Nombre Proyecto</h5>
+                <?php
+                $proyecto = $_GET['proy'];
+                $sqlVproy = "SELECT nombrePr FROM `proyecto` WHERE idproyect = '$proyecto'";
+                $res = $con->query($sqlVproy);
+                if ($res->num_rows > 0) {
+                    while ($row = $res->fetch_assoc()) {
+                        echo '<h5 class="tittle-seccion">' . $row["nombrePr"] . '</h5>';
+                    }
+                }
+                ?>
                 <button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="offcanvas"></button>
             </div>
             <div class="offcanvas-body">
@@ -64,11 +74,12 @@ include "../../php/editarSprints.php";
                     </li>
                     <div class="collapse" id="Equipo">
                         <ul class="navbar-nav sub-list">
+                            <?php
+                            include "../../php/verEquipo.php"
+                            ?>
                             <li class="nav-item  py-md-1 my-md-1">
-                                <a class="nav-link subtittle-p" href=""><i class="bi bi-person"></i>Miembro 1</a>
-                            </li>
-                            <li class="nav-item  py-md-1 my-md-1">
-                                <a class="nav-link subtittle-p" href=""><i class="bi bi-person"></i>Miembro 2</a>
+                                <a class="nav-link subtittle-p" data-bs-toggle="modal" data-bs-target="#AgregarMiembro"
+                                    href=""><i class="bi bi-plus"></i>Agregar Miembro</a>
                             </li>
                         </ul>
                     </div>
@@ -135,7 +146,7 @@ include "../../php/editarSprints.php";
             </div>
         </div>
         <?php
-            include "../../php/verSprint.php"; 
+        include "../../php/verSprint.php";
         ?>
         <div class="row">
             <div class="col text-end btnincidencias">
@@ -150,9 +161,13 @@ include "../../php/editarSprints.php";
 
     <!-- Modal edicion de Sprints -->
     <?php
-        include "../../php/modalsEdSprrints.php"; 
+    include "../../php/modalsEdSprrints.php";
     ?>
 
+    <!-- Modal crear incidencia -->
+    <?php
+    include "../../php/modalCrearIncidencia.php";
+    ?>
     <!-- Modal crear incidencia -->
     <div class="modal fade" id="incidenciaCrear" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -162,8 +177,9 @@ include "../../php/editarSprints.php";
                     <h5 class="modal-title" id="staticBackdropLabel">Crear incidencia</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <form>
+                <form>
+                    <div class="modal-body">
+
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Nombre de incidencia</label>
                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
@@ -180,6 +196,15 @@ include "../../php/editarSprints.php";
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Descripcion</label>
                             <textarea name="DesSprint1" id="" cols="45" rows="10"></textarea>
+                        </div>
+                        <div class="subincidencias-groupIdSprint">
+
+                        </div>
+                        <div class="mb-3">
+                            <button type="button" class="btn add-sprint-button">
+                                <p onclick="addInput('IdSprint')" class="element"><i class="bi bi-plus"></i>Agregar
+                                    subincidencia</p>
+                            </button>
                         </div>
                         <div class="mb-3">
                             <label for="t-incidencia" class="form-label">Informador</label>
@@ -214,12 +239,13 @@ include "../../php/editarSprints.php";
                                 <option value="1">Sprint 2</option>
                             </select>
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Crear</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Crear</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -293,9 +319,52 @@ include "../../php/editarSprints.php";
             </div>
         </div>
     </div>
+    <!-- Modal agregar alumno -->
+    <div class="modal fade" id="AgregarMiembro" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Agregar miembro al proyecto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST">
+                        
+                            <table class='table table-striped  border = "1" ' id="table1">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Correo</th>
+                                        <th>Check</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+
+                                    include "../../php/verAlumnos.php";
+                                    ?>
+                                </tbody>
+                            </table>
+                        
+                        <div class="form-actions d-flex justify-content-end">
+                            <button type="submit" class="btn btn-success" name="agregarAlumnos">Agregar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/subincidencias.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script> $(document).ready(function () {
+            $('.table').DataTable();
+        });</script>
 </body>
 
 </html>
