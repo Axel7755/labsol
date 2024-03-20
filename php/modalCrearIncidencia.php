@@ -26,10 +26,17 @@ if ($res->num_rows > 0) {
                         </div>
                         <div class="mb-3">
                             <label for="t-incidencia" class="form-label">Estado</label>
-                            <select class="form-select" aria-label="Default select example" id="t-incidencia">
-                                <option selected value="1">Por hacer</option>
-                                <option value="2">En progreso</option>
-                                <option value="3">Listo</option>
+                            <select class="form-select" aria-label="Default select example" id="t-incidencia">';
+                            $sqlVerEstAl= "SELECT idestadoAl, estadoAl FROM estadoAl WHERE estAl_idproyect = '$proyecto'";
+                            $resVerEstAl = $con->query($sqlVerEstAl);
+                            if ($resVerEstAl->num_rows > 0) {
+                                while ($rowVerEstAl = $resVerEstAl->fetch_assoc()){
+
+                                    echo'<option value="'.$rowVerEstAl["idestadoAl"].'">'.$rowVerEstAl["estadoAl"].'</option>';
+                                    
+                                }
+                            }
+                            echo'
                             </select>
                         </div>
                         <div class="mb-3">
