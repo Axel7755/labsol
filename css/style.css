@@ -90,7 +90,7 @@ body {
   background: #2a2f4f;
   color: white;
   /* codigo extra para ver curba */
- 
+
 }
 
 .navigation ul li a .icon {
@@ -184,6 +184,7 @@ body {
   align-items: center;
   font-size: 2.5em;
   cursor: pointer;
+  color: #fff;
 }
 
 .search {
@@ -336,10 +337,14 @@ header .icons span:last-child {
 
 }
 
-.bg-transparent{
+.bg-transparent {
   border: none;
-    background: none;
-    cursor: pointer;
-    margin: 0;
-    padding: 0;
+  background: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+.btn-menu {
+  color: #fff;
 }

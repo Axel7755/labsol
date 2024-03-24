@@ -3,6 +3,6 @@ if(isset($_SESSION['Usuario'])){
   
 }else{
   //echo'solo else';
-  header("Location: /labsol/pages/login.php");
+  header("Location: /Labsol%202023/pages/login.php");
 }
 ?>
