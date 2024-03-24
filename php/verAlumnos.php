@@ -1,7 +1,9 @@
 <?php
 require "../../php/conexion.php";
 
-$sqlverAlumnos="SELECT idalumno, CONCAT(al_nombre,' ',al_apP,' ',al_apM) AS nombre, al_correo FROM `alumno`";                               
+$proyecto = $_GET['proy'];
+$sqlverAlumnos="SELECT idalumno, CONCAT(al_nombre,' ',al_apP,' ',al_apM) AS nombre, al_correo
+FROM `alumno` WHERE idalumno NOT IN(SELECT pa_idalumno FROM proyecto_alumno WHERE pa_idproyect = '$proyecto')";                               
                 
 $res =$con->query($sqlverAlumnos);
      
