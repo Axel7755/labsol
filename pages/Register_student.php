@@ -1,3 +1,7 @@
+<?php
+session_start();
+include "../php/registroAl.php";
+?>
 <!DOCTYPE html>
 <html>
 
@@ -34,47 +38,47 @@
 
   <div class="box">
     <span class="borderLine"></span>
-    <form>
+    <form method="POST">
 
       <h2>Registro de Alumnos</h2>
 
       <div class="inputBox">
-        <input type="text" required="required">
+        <input type="text" name="nombre" required="required">
         <span>Nombre</span>
         <i></i>
     </div>
 
     <div class="inputBox">
-        <input type="text" required="required">
+        <input type="text" name="ApellidoP" required="required">
         <span>Apellido paterno</span>
         <i></i>
     </div>
 
     <div class="inputBox">
-        <input type="text" required="required">
+        <input type="text" name="ApellidoM" required="required">
         <span>Apellido Materno</span>
         <i></i>
     </div>
 
       <div class="inputBox">
-        <input type="text" required="required">
+        <input type="text" name="correo" required="required">
         <span>Correo electrónico</span>
         <i></i>
       </div>
 
       <div class="inputBox">
-        <input type="password" required="required">
+        <input type="password" name="contraseña" required="required">
         <span>Contraseña</span>
         <i></i>
       </div>
 
       <div class="inputBox">
-        <input type="text" required="required">
-        <span>Institución de procedencia</span>
+        <input type="text" name="institucion" required="required">
+        <span>Institución de procedencia (Nombre completo)</span>
         <i></i>
       </div>
 
-      <input type="submit" value="Inicia sesión">
+      <input type="submit" name="mandar" value="Registrar">
 
     </form>
   </div>

@@ -1,13 +1,14 @@
 
 .proys-cont{
     margin-top: 20px;
+    margin-left: -30px;
 }
 .proy{
     background-color: white;
     border-radius: 5px;
     opacity: .75;
-    margin-left: 4px;
-    margin-right: 4px;
+    margin-left: px;
+    margin-right: 10px;
 }
 
 .img-psrc{
@@ -24,11 +25,14 @@
     font-size: 17px;
     margin-bottom: 4px;
 }
+
 .tittle-seccion{
+    padding-right: 25px; /* Ajusta el valor según el espacio deseado a la derecha */
+    padding-left: 10px;
     padding: 0;
     color: white;
     font-size: 19px;
-    margin-top: 4px;
+    margin-top: 20px;
 }
 .subtittle-p{
     padding: 0;
@@ -50,4 +54,9 @@
 }
 .max-hight{
     height: 45px;
+}
+
+.container{
+    margin: 0px 0px 0px 12px;
+    padding: 0;
 }

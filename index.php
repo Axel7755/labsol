@@ -1,3 +1,7 @@
+<?php
+session_start();
+include "./php/sessionestado.php";
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -17,23 +21,20 @@
   <!--Bootstrap-->
 
   <!-- Google Font Link Icons-->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 </head>
 
 <body>
-  <div class="container">
+  <div class="container_nav">
     <div class="navigation">
       <ul>
-        <li></li>
         <li>
-          <div class="toggle">
-            <ion-icon name="menu-outline"></ion-icon>
-          </div>
+          <!--libre-->
         </li>
+
         <li class="activo">
-          <a href="./index.html">
+          <a href="./index.php">
             <span class="icon">
               <ion-icon name="home-outline"></ion-icon>
             </span>
@@ -49,22 +50,23 @@
           </a>
         </li>
         <li>
-          <a href="./pages/proyectos.html">
+          <a href="./pages/proyectos.php">
             <span class="icon">
-              <ion-icon name="create-outline"></ion-icon>
+              <ion-icon name="albums-outline"></ion-icon>
             </span>
-            <span class="title">proyectos</span>
+            <span class="title">Proyectos</span>
           </a>
         </li>
         <li>
           <a href="#">
             <span class="icon">
-              <ion-icon name="settings-outline"></ion-icon>
+              <ion-icon name="share-outline"></ion-icon>
             </span>
             <span class="title">Carga de Documentos</span>
           </a>
         </li>
-        <li>
+        <!--Estos 2 ultimos van hasta abajo-->
+        <li class="abajo">
           <a href="#">
             <span class="icon">
               <ion-icon name="settings-outline"></ion-icon>
@@ -72,13 +74,17 @@
             <span class="title">Configuración</span>
           </a>
         </li>
+
         <li>
-          <a href="#">
-            <span class="icon">
-              <ion-icon name="log-out-outline"></ion-icon>
-            </span>
-            <span class="title">Salir</span>
-          </a>
+          <form method="post" action="./pages/login.php"><button class="bg-transparent" type="submit" value="1" name="cerrars">
+              <a href="#">
+                <span class="icon">
+                  <ion-icon name="log-out-outline"></ion-icon>
+                </span>
+                <span class="title">Salir</span>
+              </a>
+            </button>
+          </form>
         </li>
       </ul>
     </div>
@@ -87,6 +93,9 @@
   <!--main-->
   <div class="main">
     <div class="topbar">
+      <div class="toggle">
+        <ion-icon name="menu-outline"></ion-icon>
+      </div>
       <!--Search-->
       <div class="search">
         <label>
@@ -100,32 +109,8 @@
       </div>
     </div>
 
-    <!--Mi calendario-->
-    <div class="container-cal">
-      <div class="wrapper">
-        <header>
-          <p class="current-date"></p>
-          <div class="icons">
-            <span id="prev" class="material-symbols-outlined">chevron_left</span>
-            <span id="next" class="material-symbols-outlined">chevron_right</span>
-          </div>
-        </header>
-        <div class="calendar">
-          <ul class="weeks">
-            <li>Do</li>
-            <li>Lu</li>
-            <li>Ma</li>
-            <li>Mi</li>
-            <li>Ju</li>
-            <li>Vi</li>
-            <li>Sa</li>
-          </ul>
-          <ul class="days">
+    <!--Los demas componentes-->
 
-          </ul>
-        </div>
-      </div>
-    </div>
   </div>
 
 

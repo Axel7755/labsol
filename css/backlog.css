@@ -36,3 +36,65 @@
     background: #c4c4c4;
     
 }
+.punteado {
+    border-style: dotted;
+    border-width: 2px;
+    border-color: #797979;
+  }
+.contenido{
+    margin: 0px 1px 0px 1px;
+    min-height: 150px;
+}
+.btnincidencias{
+    margin: 4px 0px 4px 0px;
+}
+.add-sprint-button{
+    border: none;
+    background: #d4d4d4;
+    margin: 0;
+}
+.add-sprint-button:hover{
+    border: none;
+    background: #c4c4c4;
+    
+}
+.incidencia-text{
+    font-size: .8em;
+    margin: 0;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+.incidencia-cont{
+    background-color: #ffb0b0;
+    padding: 0;
+    margin: auto;
+}
+.margin0{
+    margin: 0;
+    padding: 0;
+}
+.empty-background{
+    background: rgba(255,255,255,0.3);
+    border: 0;
+}
+.limpio{
+    text-decoration: none;
+    color: black;
+}
+.delete{
+    text-decoration: none;
+    display: inline-block;
+    background: red;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 45px;
+    height: 30px;
+    color: white;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
