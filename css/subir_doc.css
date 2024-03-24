@@ -1,0 +1,179 @@
+.container-titulo {
+    margin: 30px 30px;
+    padding: 20px;
+    border: 0px solid white;
+    border-bottom: 5px solid #752ff6;
+    background-color: white;
+    opacity: .75;
+}
+
+.container-titulo h1 {
+    text-align: center;
+    color: #752ff6;
+    font-weight: bold;
+    font-size: 45px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+p.tittle-board {
+    padding-right: 10px;
+    padding-left: 20px;
+    color: white;
+    font-size: 25px;
+    margin-top: 5px;
+
+}
+
+.container-board {
+    display: flex;
+    margin-left: 15px;
+    margin-right: 15px;
+    overflow-x: scroll;
+    /* Permite el desplazamiento horizontal */
+    white-space: nowrap;
+    /* Evita que los elementos se envuelvan a la siguiente línea */
+    text-align: left;
+    /* Alinea los elementos a la izquierda */
+}
+
+.box {
+    flex: 0 0 auto;
+    margin: 0 2vw;
+    /* Márgenes relativos al ancho de la pantalla */
+    min-width: 150px;
+    /* Ancho mínimo de cada caja */
+    max-width: 25%;
+    /* Ancho máximo relativo al contenedor padre */
+
+}
+
+.paloma {
+    display: inline-block;
+    /* Para que el icono y el texto estén en línea */
+    color: white;
+    /* Cambia el color del icono a blanco */
+    font-size: 25px;
+    /* Cambia el tamaño del icono (ajusta el valor según sea necesario) */
+    vertical-align: middle;
+    /* Alinea verticalmente el icono y el texto */
+    margin-right: 8px;
+    /* Agrega un margen derecho para separar el icono del texto (ajusta el valor según sea necesario) */
+}
+
+.cajas {
+    width: 300px;
+    min-height: 400px;
+    margin: 20px;
+    border: 2px dashed #fff;
+    background-color: rgba(142, 175, 197, 0.3);
+}
+
+.list {
+    background: #e91e63;
+    height: 60px;
+    margin: 30px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    opacity: 1;
+}
+
+.list ion-icon {
+    width: 35px;
+    height: 20px;
+    margin-right: 5px;
+    margin-left: 1px;
+}
+
+.container-addCaja {
+    margin-left: 35px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.btn-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: aliceblue;
+    width: 80px;
+    height: 60px;
+}
+
+#plus {
+    width: 50px;
+    /* Ajusta el tamaño según sea necesario */
+    height: 50px;
+    /* Ajusta el tamaño según sea necesario */
+}
+
+.nuevoTitulo {
+    margin: 2px;
+    padding: 8px;
+    width: 292px;
+    background-color: transparent;  /* Establecer el fondo como transparente */
+    opacity: .75;
+    border: none;
+    font-size: 25px;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Ajusta los valores según sea necesario */
+
+}
+
+.nuevoTitulo::placeholder {
+    /* Restablecer todos los estilos predeterminados */
+    font-style: normal; /* Puede ser itálica en algunos navegadores por defecto */
+    color: initial;     /* Establecer el color inicial (normalmente gris) */
+    opacity: 1;         /* Restablecer la opacidad a su valor original */
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Ajusta los valores según sea necesario */
+}
+
+.contenedor-pdf{
+    margin: 2px;
+    padding: 8px;
+    width: 292px;
+    height: 70%;
+      /* Establecer el fondo como transparente */
+    opacity: .75;
+    border: none;
+    font-size: 25px;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Ajusta los valores según sea necesario */
+}
+
+
+#custom-btn{
+    margin-top: 40%;
+    width: 100%;
+    height: 40px;
+    display: block;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: .5spx;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: linear-gradient(135deg, #3a8ffe 0%, #9658fe 100%);
+}
+
+
+.box .icon{
+    margin-top: 10%;
+    font-size: 100px;
+    align-items: center;
+    color: #9658fe;
+}
+
+.box .text{
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+}
