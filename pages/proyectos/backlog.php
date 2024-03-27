@@ -355,6 +355,43 @@ include "../../php/agregarAlumnoProy.php";
             </div>
         </div>
     </div>
+
+    <!-- Modal eliminar miembro -->
+    <div class="modal fade" id="EliminarMiembro" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Agregar miembro al proyecto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST">
+                        
+                            <table class='table table-striped  border = "1" ' id="table1">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Correo</th>
+                                        <th>Check</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+
+                                    include "../../php/verMiembros.php";
+                                    ?>
+                                </tbody>
+                            </table>
+                        
+                        <div class="form-actions d-flex justify-content-end">
+                            <button type="submit" class="btn btn-success" name="eliminarMiembros">Eliminar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="../../js/subincidencias.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"

@@ -9,17 +9,22 @@ if ($resVerEq->num_rows > 0) {
     while ($rowVerEq = $resVerEq->fetch_assoc()) {
 
         if ($rowVerEq["idalumno"] == $_SESSION['ID'] && $_SESSION['Tipo'] == 0) {
-           
+
         } else {
             echo '
             <li class="nav-item  py-md-1 my-md-1">
-                <a class="nav-link subtittle-p" href=""><i class="bi bi-person"></i> '.$rowVerEq["nombre"].'</a>
+                <a class="nav-link subtittle-p" href=""><i class="bi bi-person"></i> ' . $rowVerEq["nombre"] . '</a>
             </li>';
         }
 
     }
-}else{
-    echo'
+    echo '
+    <li class="nav-item  py-md-1 my-md-1">
+        <a class="nav-link subtittle-p" data-bs-toggle="modal" data-bs-target="#EliminarMiembro"
+        href=""><i class="bi bi-plus"></i>Eliminar Miembro</a>
+    </li>';
+} else {
+    echo '
     <li class="nav-item  py-md-1 my-md-1">
         <a class="nav-link subtittle-p" href=""><i class="bi bi-person"></i>Miembro 1</a>
     </li>
