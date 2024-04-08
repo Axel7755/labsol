@@ -7,6 +7,7 @@ include "../../php/eliminarSprint.php";
 include "../../php/estadoSprint.php";
 include "../../php/editarSprints.php";
 include "../../php/agregarAlumnoProy.php";
+include "../../php/eliminarMiemProy.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -49,6 +50,11 @@ include "../../php/agregarAlumnoProy.php";
             <div class="offcanvas-body">
                 <ul class="navbar-nav ">
                     <li class="nav-item  py-md-1 my-md-1 active">
+                        <a class="nav-link tittle-p" href="../proyectos.php">
+                            <i class="bi bi-house-door"></i> Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item  py-md-1 my-md-1 active">
                         <a class="nav-link tittle-p" data-bs-toggle="collapse" href="#Planificación" role="button"
                             aria-expanded="false" aria-controls="Planificación">
                             <i class="bi bi-ui-radios px-2"></i>Planificación
@@ -76,7 +82,7 @@ include "../../php/agregarAlumnoProy.php";
                         <ul class="navbar-nav sub-list">
                             <?php
                             include "../../php/verEquipo.php"
-                            ?>
+                                ?>
                             <li class="nav-item  py-md-1 my-md-1">
                                 <a class="nav-link subtittle-p" data-bs-toggle="modal" data-bs-target="#AgregarMiembro"
                                     href=""><i class="bi bi-plus"></i>Agregar Miembro</a>
@@ -330,23 +336,23 @@ include "../../php/agregarAlumnoProy.php";
                 </div>
                 <div class="modal-body">
                     <form method="POST">
-                        
-                            <table class='table table-striped  border = "1" ' id="table1">
-                                <thead>
-                                    <tr>
-                                        <th>Nombre</th>
-                                        <th>Correo</th>
-                                        <th>Check</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
 
-                                    include "../../php/verAlumnos.php";
-                                    ?>
-                                </tbody>
-                            </table>
-                        
+                        <table class='table table-striped  border = "1" ' id="table1">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Correo</th>
+                                    <th>Check</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+
+                                include "../../php/verAlumnos.php";
+                                ?>
+                            </tbody>
+                        </table>
+
                         <div class="form-actions d-flex justify-content-end">
                             <button type="submit" class="btn btn-success" name="agregarAlumnos">Agregar</button>
                         </div>
@@ -367,23 +373,23 @@ include "../../php/agregarAlumnoProy.php";
                 </div>
                 <div class="modal-body">
                     <form method="POST">
-                        
-                            <table class='table table-striped  border = "1" ' id="table1">
-                                <thead>
-                                    <tr>
-                                        <th>Nombre</th>
-                                        <th>Correo</th>
-                                        <th>Check</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
 
-                                    include "../../php/verMiembros.php";
-                                    ?>
-                                </tbody>
-                            </table>
-                        
+                        <table class='table table-striped  border = "1" ' id="table1">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Correo</th>
+                                    <th>Check</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+
+                                include "../../php/verMiembros.php";
+                                ?>
+                            </tbody>
+                        </table>
+
                         <div class="form-actions d-flex justify-content-end">
                             <button type="submit" class="btn btn-success" name="eliminarMiembros">Eliminar</button>
                         </div>
