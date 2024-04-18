@@ -1,15 +1,13 @@
 .container-titulo {
     margin: 30px 30px;
     padding: 20px;
-    border: 0px solid white;
-    border-bottom: 5px solid #752ff6;
-    background-color: white;
-    opacity: .75;
+    border-bottom: 3px solid #ffffff;
+    opacity: .80;
 }
 
 .container-titulo h1 {
     text-align: center;
-    color: #752ff6;
+    color: #ffffff;
     font-weight: bold;
     font-size: 45px;
     font-family: 'Times New Roman', Times, serif;
