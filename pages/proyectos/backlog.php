@@ -8,6 +8,8 @@ include "../../php/estadoSprint.php";
 include "../../php/editarSprints.php";
 include "../../php/agregarAlumnoProy.php";
 include "../../php/eliminarMiemProy.php";
+include "../../php/guardarIncidencia.php";
+require "../../php/conexion.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -63,12 +65,18 @@ include "../../php/eliminarMiemProy.php";
                     <div class="collapse show" id="Planificación">
                         <ul class="navbar-nav sub-list">
                             <li class="nav-item py-md-1 my-md-1 active">
-                                <a class="nav-link subtittle-p" href="./backlog.html"><i
-                                        class="bi bi-menu-button-wide px-2"></i>Backlog</a>
+                            <?php
+                                echo'
+                                <a class="nav-link subtittle-p" href="./backlog.php?proy='.$proyecto.'"><i
+                                        class="bi bi-menu-button-wide px-2"></i>Backlog</a>';
+                            ?>
                             </li>
                             <li class="nav-item  py-md-1 my-md-1">
-                                <a class="nav-link subtittle-p" href="./board.html"><i
-                                        class="bi bi-layout-three-columns px-2"></i>Tablero</a>
+                                <?php
+                                echo'
+                                <a class="nav-link subtittle-p" href="./board.php?proy='.$proyecto.'"><i
+                                        class="bi bi-layout-three-columns px-2"></i>Tablero</a>';
+                                ?>
                             </li>
                         </ul>
                     </div>

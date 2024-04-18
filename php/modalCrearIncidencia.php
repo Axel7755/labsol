@@ -16,7 +16,7 @@ if ($res->num_rows > 0) {
                     <h5 class="modal-title" id="staticBackdropLabel">Crear incidencia</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form>
+                <form method="post">
                     <div class="modal-body">
                     
                         <div class="mb-3">
@@ -41,7 +41,7 @@ if ($res->num_rows > 0) {
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Descripcion</label>
-                            <textarea name="DesIncidencia" id="" cols="45" rows="10"></textarea>
+                            <textarea name="desIncidencia" id="" cols="45" rows="10"></textarea>
                         </div>
                         <div class="subincidencias-group'.$row["idsprint"].'">
 
@@ -52,8 +52,8 @@ if ($res->num_rows > 0) {
                             </button>
                         </div>
                         <div class="mb-3">
-                            <label for="t-incidencia" name="InformadorIncidencia" class="form-label">Informador</label>
-                            <select class="form-select" aria-label="Default select example" id="t-incidencia">';
+                            <label for="t-incidencia" class="form-label">Informador</label>
+                            <select class="form-select" name="informadorIncidencia" aria-label="Default select example" id="t-incidencia">';
                                 $sqlVerUsuarios= "SELECT idalumno, CONCAT(al_nombre,' ',al_apP,' ',al_apM) as nombre
                                 FROM alumno al JOIN proyecto_alumno proy ON(proy.pa_idalumno = al.idalumno) WHERE proy.pa_idproyect = '$proyecto'";
                                 $resVerUs = $con->query($sqlVerUsuarios);
