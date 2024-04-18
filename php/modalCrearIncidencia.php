@@ -21,12 +21,12 @@ if ($res->num_rows > 0) {
                     
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Nombre de incidencia</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            <input type="text" class="form-control" name="nomIncidencia" id="exampleInputEmail1" aria-describedby="emailHelp"
                                 placeholder="Nombre de incidencia">
                         </div>
                         <div class="mb-3">
                             <label for="t-incidencia" class="form-label">Estado</label>
-                            <select class="form-select" aria-label="Default select example" id="t-incidencia">';
+                            <select class="form-select" name="estAlIncidencia" aria-label="Default select example" id="t-incidencia">';
                             $sqlVerEstAl= "SELECT idestadoAl, estadoAl FROM estadoAl WHERE estAl_idproyect = '$proyecto'";
                             $resVerEstAl = $con->query($sqlVerEstAl);
                             if ($resVerEstAl->num_rows > 0) {
@@ -41,7 +41,7 @@ if ($res->num_rows > 0) {
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Descripcion</label>
-                            <textarea name="DesSprint1" id="" cols="45" rows="10"></textarea>
+                            <textarea name="DesIncidencia" id="" cols="45" rows="10"></textarea>
                         </div>
                         <div class="subincidencias-group'.$row["idsprint"].'">
 
@@ -52,7 +52,7 @@ if ($res->num_rows > 0) {
                             </button>
                         </div>
                         <div class="mb-3">
-                            <label for="t-incidencia" class="form-label">Informador</label>
+                            <label for="t-incidencia" name="InformadorIncidencia" class="form-label">Informador</label>
                             <select class="form-select" aria-label="Default select example" id="t-incidencia">';
                                 $sqlVerUsuarios= "SELECT idalumno, CONCAT(al_nombre,' ',al_apP,' ',al_apM) as nombre
                                 FROM alumno al JOIN proyecto_alumno proy ON(proy.pa_idalumno = al.idalumno) WHERE proy.pa_idproyect = '$proyecto'";
@@ -75,7 +75,7 @@ if ($res->num_rows > 0) {
                         </div>
                         <div class="mb-3">
                             <label for="t-incidencia" class="form-label">Responsable</label>
-                            <select class="form-select" aria-label="Default select example" id="t-incidencia">';
+                            <select class="form-select" name="responsableIncidencia" aria-label="Default select example" id="t-incidencia">';
                             $sqlVerUsuarios= "SELECT idalumno, CONCAT(al_nombre,' ',al_apP,' ',al_apM) as nombre
                             FROM alumno al JOIN proyecto_alumno proy ON(proy.pa_idalumno = al.idalumno) WHERE proy.pa_idproyect = '$proyecto'";
                             $resVerUs = $con->query($sqlVerUsuarios);
@@ -97,17 +97,17 @@ if ($res->num_rows > 0) {
                         </div>
                         <div class="mb-3">
                             <label for="t-incidencia" class="form-label">Prioridad</label>
-                            <select class="form-select" aria-label="Default select example" id="t-incidencia">
-                                <option value="1">Muy alta</option>
-                                <option value="2">Alta</option>
-                                <option selected value="3">Media</option>
-                                <option value="1">baja</option>
-                                <option value="2">Muy baja</option>
+                            <select class="form-select" name="prioriIncidencia" aria-label="Default select example" id="t-incidencia">
+                                <option>Urgente</option>
+                                <option>Alta</option>
+                                <option selected>Media</option>
+                                <option>Baja</option>
+                                <option>Muy baja</option>
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="t-incidencia" class="form-label">Sprint</label>
-                            <select class="form-select" aria-label="Default select example" id="t-incidencia">';
+                            <select class="form-select" name="sprintIcidencidencia" aria-label="Default select example" id="t-incidencia">';
                             $sqlVerSrpintsSubIn = "SELECT * FROM sprint WHERE spr_idproyect = '$proyecto'";
                             $resSubIn = $con->query($sqlVerSrpintsSubIn);
                             if ($resSubIn->num_rows > 0) {
@@ -127,7 +127,7 @@ if ($res->num_rows > 0) {
                     
                     </div>
                     <div class="modal-footer">
-                        <button type="sumbmit" class="btn btn-primary">Crear</button>
+                        <button type="sumbmit" name="crearIncidencia" class="btn btn-primary">Crear</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
