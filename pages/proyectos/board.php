@@ -1,3 +1,12 @@
+<?php
+session_start();
+include "../../php/sessionestado.php";
+include "../../php/agregarAlumnoProy.php";
+include "../../php/eliminarMiemProy.php";
+//echo"antes";
+
+require "../../php/conexion.php";
+?>
 <!doctype html>
 <html lang="es">
 
@@ -35,7 +44,17 @@
         <!--Menu lateral-->
         <section class="offcanvas offcanvas-start menu-design" id="menu-desp" tabindex="-1">
             <div class="offcanvas-header" data-bs-theme="dark">
-                <h5 class="tittle-seccion">Nombre Proyecto</h5>
+                <?php
+                $proyecto = $_GET['proy'];
+                $sqlNproy = "SELECT nombrePr FROM `proyecto` WHERE idproyect = '$proyecto'";
+                //echo"$sqlNproy";
+                $rest = $con->query($sqlNproy);
+                if ($rest->num_rows > 0) {
+                    while ($rowt = $rest->fetch_assoc()) {
+                        echo '<h5 class="tittle-seccion">' . $rowt["nombrePr"] . '</h5>';
+                    }
+                }
+                ?>
                 <button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="offcanvas"></button>
             </div>
             <div class="offcanvas-body">
@@ -54,12 +73,18 @@
                     <div class="collapse show" id="Planificación">
                         <ul class="navbar-nav sub-list">
                             <li class="nav-item py-md-1 my-md-1">
-                                <a class="nav-link subtittle-p" href="./backlog.html"><i
-                                        class="bi bi-menu-button-wide px-2"></i>Backlog</a>
+                            <?php
+                                echo'
+                                <a class="nav-link subtittle-p" href="./backlog.php?proy='.$proyecto.'"><i
+                                        class="bi bi-menu-button-wide px-2"></i>Backlog</a>';
+                            ?>
                             </li>
                             <li class="nav-item  py-md-1 my-md-1 active">
-                                <a class="nav-link subtittle-p" href="./board.html"><i
-                                        class="bi bi-layout-three-columns px-2"></i>Tablero</a>
+                                <?php
+                                echo'
+                                <a class="nav-link subtittle-p" href="./board.php?proy='.$proyecto.'"><i
+                                        class="bi bi-layout-three-columns px-2"></i>Tablero</a>';
+                                ?>
                             </li>
                         </ul>
                     </div>
@@ -71,11 +96,12 @@
                     </li>
                     <div class="collapse" id="Equipo">
                         <ul class="navbar-nav sub-list">
+                            <?php
+                            include "../../php/verEquipo.php"
+                                ?>
                             <li class="nav-item  py-md-1 my-md-1">
-                                <a class="nav-link subtittle-p" href=""><i class="bi bi-person"></i>Miembro 1</a>
-                            </li>
-                            <li class="nav-item  py-md-1 my-md-1">
-                                <a class="nav-link subtittle-p" href=""><i class="bi bi-person"></i>Miembro 2</a>
+                                <a class="nav-link subtittle-p" data-bs-toggle="modal" data-bs-target="#AgregarMiembro"
+                                    href=""><i class="bi bi-plus"></i>Agregar Miembro</a>
                             </li>
                         </ul>
                     </div>
@@ -137,6 +163,80 @@
             <input type="text" class="nuevoTitulo" placeholder="Listo" value="Listo" readonly>
             <ion-icon class="paloma" name="checkmark-outline"></ion-icon>
 
+        </div>
+    </div>
+
+    <!-- Modal agregar alumno -->
+    <div class="modal fade" id="AgregarMiembro" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Agregar miembro al proyecto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST">
+
+                        <table class='table table-striped  border = "1" ' id="table1">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Correo</th>
+                                    <th>Check</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+
+                                include "../../php/verAlumnos.php";
+                                ?>
+                            </tbody>
+                        </table>
+
+                        <div class="form-actions d-flex justify-content-end">
+                            <button type="submit" class="btn btn-success" name="agregarAlumnos">Agregar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal eliminar miembro -->
+    <div class="modal fade" id="EliminarMiembro" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Agregar miembro al proyecto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST">
+
+                        <table class='table table-striped  border = "1" ' id="table1">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Correo</th>
+                                    <th>Check</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+
+                                include "../../php/verMiembros.php";
+                                ?>
+                            </tbody>
+                        </table>
+
+                        <div class="form-actions d-flex justify-content-end">
+                            <button type="submit" class="btn btn-success" name="eliminarMiembros">Eliminar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 
