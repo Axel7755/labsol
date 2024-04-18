@@ -178,14 +178,14 @@ CREATE TABLE IF NOT EXISTS `labsol2`.`tarea` (
   `idtarea` INT NOT NULL,
   `tarea` VARCHAR(45) NOT NULL,
   `descripcion` LONGTEXT NULL,
-  `prioridad` VARCHAR(6) NULL,
+  `prioridad` VARCHAR(8) NULL,
   `tarea_idtarea` INT NULL,
   `estadoAdm_idestadoAdm` INT NULL,
   `estadoAl_idestadoAl` INT NULL,
   `sprint_idsprint` INT NOT NULL,
   `ta_spr_idproyect` INT NOT NULL,
   `notificador` INT NOT NULL,
-  PRIMARY KEY (`idtarea`, `tarea_idtarea`),
+  PRIMARY KEY (`idtarea`),
   INDEX `fk_tarea_tarea1_idx` (`tarea_idtarea` ASC) ,
   INDEX `fk_tarea_estadoAdm1_idx` (`estadoAdm_idestadoAdm` ASC) ,
   INDEX `fk_tarea_estadoAl1_idx` (`estadoAl_idestadoAl` ASC) ,
@@ -208,8 +208,8 @@ CREATE TABLE IF NOT EXISTS `labsol2`.`tarea` (
   CONSTRAINT `fk_tarea_sprint1`
     FOREIGN KEY (`sprint_idsprint` , `ta_spr_idproyect`)
     REFERENCES `labsol2`.`sprint` (`idsprint` , `spr_idproyect`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
