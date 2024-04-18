@@ -1,9 +1,7 @@
 .container-titulo {
     margin: 30px 30px;
     padding: 20px;
-    border: 0px solid white;
     border-bottom: 5px solid #752ff6;
-    background-color: white;
     opacity: .75;
 }
 
