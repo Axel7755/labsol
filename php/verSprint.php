@@ -69,10 +69,15 @@ if ($res->num_rows > 0) {
             <div class="row collapse" id="SprintId'.$row["idsprint"].'">
                 <div class="col">
                     <div class="row punteado rounded-3 contenido">
-                        <div class="col margin0">
-                            <div class="row incidencia-cont">
+                        <div class="col margin0">';
+                        $sqlVerInci = "SELECT * FROM `tarea` WHERE sprint_idsprint = '".$row["idsprint"]."'";
+                        $resVerInc = $con->query($sqlVerInci);
+                        if ($resVerInc->num_rows > 0) {
+                            while ($rowVerInc = $resVerInc->fetch_assoc()){
+                                echo'
+                                <div class="row incidencia-cont">
                                 <div class="col-9">
-                                    <p class="incidencia-text">Nombre de incidencia</p>
+                                    <p class="incidencia-text">'.$rowVerInc["tarea"].'</p>
                                 </div>
                                 <div class="col-lg-2 ">
                                     <select class="form-select empty-background completo"
@@ -107,7 +112,10 @@ if ($res->num_rows > 0) {
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div>';
+                            }
+                        }
+                        echo'
                         </div>
                     </div>
                     <div class="row">
