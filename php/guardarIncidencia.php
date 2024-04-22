@@ -32,7 +32,12 @@ if (isset($_POST['crearIncidencia'])) {
                                 VALUES ('$idInc', '$nomInc', '$DesInc', '$prioInc', '$estAlInc', '$sprintInc', '$proyecto', '$InfoInc')";
                                 //echo $sqlCrearInc;
                                 if ($con->query($sqlCrearInc) == true) {
-        
+                                    
+                                    $sqlAlumInc="INSERT INTO tarea_a_alumno(r_idtarea,r_idalumno)
+                                    VALUES ($idInc,$RespInc)";
+                                    if ($con->query($sqlAlumInc) == true){
+
+                                    }
                                 } else {
                                     echo "<br><p style='color: rgb(136, 1, 1);'>Error al guardar</p>";
                                 }
