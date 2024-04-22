@@ -5,16 +5,16 @@ $id = $_SESSION['ID'];
 switch ($tipo) {
   case 1:
     $sqlVproy = "SELECT * FROM `proyecto` proy JOIN `proyecto_alumno` proyal 
-        ON (proy.idproyect=proyal.pa_idproyect) WHERE pa_idalumno = '$id'";
+        ON (proy.idproyect=proyal.pa_idproyect) WHERE pa_idalumno = '$id' LIMIT 6";
     break;
   case 0:
-    $sqlVproy = "SELECT * FROM `proyecto` WHERE solicitante_idsolicitante = '$id'";
+    $sqlVproy = "SELECT * FROM `proyecto` WHERE solicitante_idsolicitante = '$id' LIMIT 6";
     break;
   case 2:
-    $sqlVproy = "SELECT * FROM `proyecto`";
+    $sqlVproy = "SELECT * FROM `proyecto` LIMIT 6";
     break;
 }
-$sqlVproy = "SELECT * FROM `proyecto`";
+$sqlVproy = "SELECT * FROM `proyecto` LIMIT 6";
 $res = $con->query($sqlVproy);
 if ($res->num_rows > 0) {
   while ($row = $res->fetch_assoc()) {
