@@ -4,7 +4,7 @@ require "../../php/conexion.php";
 if (isset($_POST['crearSprint'])) {
     $proyecto = $_GET['proy'];
 
-    $sqlid = "SELECT idsprint FROM `sprint` WHERE spr_idproyect = '$proyecto'";
+    $sqlid = "SELECT idsprint FROM `sprint` WHERE spr_idproyect = '$proyecto' ORDER BY idsprint ASC";
     $res = $con->query($sqlid);
     if ($res->num_rows > 0) {
         while ($row = $res->fetch_assoc()) {
