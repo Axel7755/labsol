@@ -15,7 +15,7 @@ if (isset($_POST['mandar'])) {
                         $sqldup1 = "SELECT * FROM `alumno` WHERE al_correo = '$corr'";
                         $resup1 = $con->query($sqldup1);
                         if (!($resup->num_rows > 0) && !($resup1->num_rows > 0)) {
-                            $sql1 = "SELECT * FROM `solicitante`";
+                            $sql1 = "SELECT idsolicitante FROM `solicitante` ORDER BY idsolicitante ASC";
 
                             $res = $con->query($sql1);
                             if ($res->num_rows > 0) {

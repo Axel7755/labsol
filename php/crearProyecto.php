@@ -5,7 +5,7 @@ if (isset($_POST['cproy'])) {
         if (isset($_POST['cproy_comm']) && !empty($_POST['cproy_comm'])) {
             $proy = $_POST['cproy_nom'];
             $proycom = $_POST['cproy_comm'];
-            $sql1 = "SELECT * FROM `proyecto`";
+            $sql1 = "SELECT idproyect FROM `proyecto` ORDER BY idproyect ASC";
             $res = $con->query($sql1);
             if ($res->num_rows > 0) {
                 while ($row = $res->fetch_assoc()) {
@@ -48,7 +48,7 @@ if (isset($_POST['cproy'])) {
             }
             if ($con->query($sqlproy) == true) {
 
-                $sqlEstAl = "SELECT 'idestadoAl' FROM `estadoAl` WHERE estAl_idproyect='$Idres'";
+                $sqlEstAl = "SELECT 'idestadoAl' FROM `estadoAl` WHERE estAl_idproyect='$Idres' ORDER BY idestadoAl ASC";
                 $resEstAl = $con->query($sqlEstAl);
                 if ($resEstAl->num_rows > 0) {
                     while ($rowresEstAl = $resEstAl->fetch_assoc()) {
@@ -69,7 +69,7 @@ if (isset($_POST['cproy'])) {
                 $sqlCrearEstAl3 = "INSERT INTO `estadoAl` (idestadoAl,estadoAl,estAl_idproyect)
                 VALUES ('$IdresEstAl','Listo','$Idres'); ";
 
-                $sqlEst = "SELECT 'idestadoAdm' FROM `estadoAdm`";
+                $sqlEst = "SELECT 'idestadoAdm' FROM `estadoAdm` WHERE estAdm_idproyect='$Idres' ORDER BY idestadoAdm ASC";
                 $resEst = $con->query($sqlEstAl);
                 if ($resEst->num_rows > 0) {
                     while ($rowresEst = $resEst->fetch_assoc()) {

@@ -26,7 +26,7 @@ if (isset($_POST['mandar'])) {
                                     }
                                     $flag = true;
                                 } else {
-                                    $sqlins = "SELECT * FROM `institucion`";
+                                    $sqlins = "SELECT * FROM `institucion` ORDER BY idinstitucion ASC";
                                     $resi = $con->query($sqlins);
                                     if ($resi->num_rows > 0) {
                                         while ($rowi = $resi->fetch_assoc()) {
@@ -44,7 +44,7 @@ if (isset($_POST['mandar'])) {
                                     }
                                 }
                                 if ($flag) {
-                                    $sql1 = "SELECT * FROM `alumno`";
+                                    $sql1 = "SELECT * FROM `alumno` ORDER BY idalumno ASC";
 
                                     $res = $con->query($sql1);
                                     if ($res->num_rows > 0) {

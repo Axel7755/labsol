@@ -47,7 +47,7 @@ function addInput(idSprint){
         invi.name="ning";
         invi.value=i;
     }else{
-        document.removeChild(ning);
+        document.removeChild("ning");
         invi.type="hidden";
         invi.name="ning";
         invi.value=i;
