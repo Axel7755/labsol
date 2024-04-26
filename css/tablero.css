@@ -64,7 +64,7 @@ p.tittle-board {
     min-height: 400px;
     margin: 20px;
     border: 2px dashed #fff;
-    border-radius: 4px;
+    border-radius: 8px;
     background-color: rgba(142, 175, 197, 0.3);
 }
 
