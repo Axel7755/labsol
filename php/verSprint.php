@@ -97,7 +97,7 @@ if ($res->num_rows > 0) {
                                         <ul class="dropdown-menu margin0">
                                             <li class="">
                                                 <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                    data-bs-target="#incidenciaCrear">
+                                                    data-bs-target="#incidenciaEditar'.$rowVerInc["idtarea"].'">
                                                     <label class="form-check-label" for="MisIncidencias-f">
                                                         Editar
                                                     </label>

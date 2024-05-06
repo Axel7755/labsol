@@ -263,6 +263,11 @@ require "../../php/conexion.php";
             </div>
         </div>
     </div>
+
+    <!-- Modal editar incidencia -->
+    <?php
+    include "../../php/modalEditarInc.php";
+    ?>
     <!-- Modal editar incidencia -->
     <div class="modal fade" id="incidenciaEditar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -376,7 +381,7 @@ require "../../php/conexion.php";
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Agregar miembro al proyecto</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Eliminar miembro del</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
