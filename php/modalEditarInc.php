@@ -31,8 +31,12 @@ if ($res->num_rows > 0) {
                             if ($resVerEstAl->num_rows > 0) {
                                 while ($rowVerEstAl = $resVerEstAl->fetch_assoc()){
 
-                                    echo'<option value="'.$rowVerEstAl["idestadoAl"].'">'.$rowVerEstAl["estadoAl"].'</option>';
-                                    
+                                    if($rowVerEstAl["idestadoAl"]==$row["estadoAl_idestadoAl"]){
+                                        echo'<option selected value="'.$rowVerEstAl["idestadoAl"].'">'.$rowVerEstAl["estadoAl"].'</option>';
+                                    }else{
+
+                                        echo'<option value="'.$rowVerEstAl["idestadoAl"].'">'.$rowVerEstAl["estadoAl"].'</option>';
+                                    }
                                 }
                             }
                             echo'
