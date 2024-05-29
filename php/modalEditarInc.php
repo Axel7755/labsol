@@ -44,9 +44,17 @@ if ($res->num_rows > 0) {
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Descripcion</label>
-                            <textarea name="desIncidencia" id="" cols="45" rows="10"></textarea>
+                            <textarea name="desIncidencia" id="" cols="45" rows="10">'.$row["descripcion"].'</textarea>
                         </div>
                         <div class="subincidencias-group'.$row["idsprint"].'">
+
+                            <div class="flex">
+                                <input type="text" class="form-control" placeholder="Nombre de subincidencia" name="nombreSub1">
+                                <label>Descripcion</label>
+                                <textarea cols="45" rows="10" class="form-control" name="descrip1"></textarea>
+                                <a class="delete">×</a>
+                                <input type="hidden" name="ning" value="1">
+                            </div>
 
                         </div>
                         <div class="mb-3">
@@ -130,7 +138,7 @@ if ($res->num_rows > 0) {
                     
                     </div>
                     <div class="modal-footer">
-                        <button type="sumbmit" name="crearIncidencia" class="btn btn-primary">Crear</button>
+                        <button type="sumbmit" name="editarIncidencia" class="btn btn-primary">Crear</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
