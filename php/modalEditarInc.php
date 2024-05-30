@@ -46,17 +46,24 @@ if ($res->num_rows > 0) {
                             <label for="exampleInputEmail1" class="form-label">Descripcion</label>
                             <textarea name="desIncidencia" id="" cols="45" rows="10">'.$row["descripcion"].'</textarea>
                         </div>
-                        <div class="subincidencias-group'.$row["idsprint"].'">
+                        <div class="subincidencias-group'.$row["idsprint"].'">';
 
-                            <div class="flex">
-                                <input type="text" class="form-control" placeholder="Nombre de subincidencia" name="nombreSub1">
+                        $sqlverSubInc="SELECT * FROM `tarea` WHERE `tarea_idtarea` = '".$row["idtarea"]."'";
+                        $x=1;
+                        $resverSubInc = $con->query($sqlverSubInc);
+                        if ($resverSubInc->num_rows > 0) {
+                            while ($rowverSubInc = $resverSubInc->fetch_assoc()){
+                            echo'<div class="flex">
+                                <input type="text" class="form-control" placeholder="'.$rowverSubInc["tarea"].'" name="nombreSub'.$x.'">
                                 <label>Descripcion</label>
-                                <textarea cols="45" rows="10" class="form-control" name="descrip1"></textarea>
+                                <textarea cols="45" rows="10" class="form-control" name="descrip'.$x.'"></textarea>
                                 <a class="delete">×</a>
-                                <input type="hidden" name="ning" value="1">
-                            </div>
-
-                        </div>
+                                <input type="hidden" name="ning" value="'.$x.'">
+                            </div>';
+                            $x++;
+                            }
+                        }
+                        '</div>
                         <div class="mb-3">
                             <button type="button" class="btn add-sprint-button">
                                 <p onclick="addInput('.$row["idsprint"].')" class="element"><i class="bi bi-plus"></i>Agregar subincidencia</p>
