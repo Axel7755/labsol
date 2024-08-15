@@ -7,6 +7,9 @@ function removeInput(){
 }
 
 var i=0;
+var botonDelSub = document.getElementById("deleteSub");
+botonDelSub.addEventListener("click", removeInput);
+
 /*function addInput(event){
     event.preventDefault();*/
 function addInput(idSprint){
@@ -39,7 +42,7 @@ function addInput(idSprint){
     flex.className="flex";
     input.appendChild(flex);
 
-    const invi = document.createElement("input");;
+    var invi = document.createElement("input");;
 
     if(!!document.getElementsByName("ning")){
 
@@ -47,10 +50,11 @@ function addInput(idSprint){
         invi.name="ning";
         invi.value=i;
     }else{
+        invi2=document.getElementsByName("ning")
         document.removeChild("ning");
         invi.type="hidden";
         invi.name="ning";
-        invi.value=i;
+        invi.value=invi2.value;
     }
 
     

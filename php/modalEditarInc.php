@@ -57,7 +57,7 @@ if ($res->num_rows > 0) {
                                 <input type="text" class="form-control" placeholder="'.$rowverSubInc["tarea"].'" name="nombreSub'.$x.'">
                                 <label>Descripcion</label>
                                 <textarea cols="45" rows="10" class="form-control" name="descrip'.$x.'"></textarea>
-                                <a class="delete">×</a>
+                                <a class="delete" id="deleteSub">×</a>
                                 <input type="hidden" name="ning" value="'.$x.'">
                             </div>';
                             $x++;
