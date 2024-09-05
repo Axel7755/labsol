@@ -7,8 +7,15 @@ function removeInput(){
 }
 var i=0;
 
+var botonesDelSub = document.querySelectorAll(".deleteSub");
+botonesDelSub.forEach(botonDelSub => {
+    botonDelSub.addEventListener("click", removeInput);
+});
+
 /*function addInput(event){
     event.preventDefault();*/
+
+    //Con el final ed del modal de edicion identificar el numero de ning para el valor i 
 function addInput(idSprint){
     const input = document.querySelector(".subincidencias-group"+idSprint);
     //preventDefault();

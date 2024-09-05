@@ -46,7 +46,7 @@ if ($res->num_rows > 0) {
                             <label for="exampleInputEmail1" class="form-label">Descripcion</label>
                             <textarea name="desIncidencia" id="" cols="45" rows="10">'.$row["descripcion"].'</textarea>
                         </div>
-                        <div class="subincidencias-group'.$row["idsprint"].'">';
+                        <div class="subincidencias-group'.$row["idtarea"].'Ed">';
 
                         $sqlverSubInc="SELECT * FROM `tarea` WHERE `tarea_idtarea` = '".$row["idtarea"]."'";
                         $x=1;
@@ -57,16 +57,16 @@ if ($res->num_rows > 0) {
                                 <input type="text" class="form-control" placeholder="'.$rowverSubInc["tarea"].'" name="nombreSub'.$x.'">
                                 <label>Descripcion</label>
                                 <textarea cols="45" rows="10" class="form-control" name="descrip'.$x.'"></textarea>
-                                <a class="delete" id="deleteSub">×</a>
+                                <a class="delete deleteSub">×</a>
                                 <input type="hidden" name="ning" value="'.$x.'">
                             </div>';
                             $x++;
                             }
                         }
-                        '</div>
+                        echo'</div>
                         <div class="mb-3">
                             <button type="button" class="btn add-sprint-button">
-                                <p onclick="addInput('.$row["idsprint"].')" class="element"><i class="bi bi-plus"></i>Agregar subincidencia</p>
+                                <p onclick="addInput(`'.$row["idtarea"].'Ed'.'`)" class="element"><i class="bi bi-plus"></i>Agregar subincidencia</p>
                             </button>
                         </div>
                         <div class="mb-3">
@@ -75,10 +75,11 @@ if ($res->num_rows > 0) {
                                 $sqlVerUsuarios= "SELECT idalumno, CONCAT(al_nombre,' ',al_apP,' ',al_apM) as nombre
                                 FROM alumno al JOIN proyecto_alumno proy ON(proy.pa_idalumno = al.idalumno) WHERE proy.pa_idproyect = '$proyecto'";
                                 $resVerUs = $con->query($sqlVerUsuarios);
+                                
                                 if ($resVerUs->num_rows > 0) {
                                 while ($rowVerUs = $resVerUs->fetch_assoc()){
 
-                                    if($rowVerUs["idalumno"]==$_SESSION['ID']){
+                                    if($rowVerUs["idalumno"]==$row["notificador"]){
                                         echo'
                                         <option selected value="'.$rowVerUs["idalumno"].'">'.$rowVerUs["nombre"].'</option>';
                                     }else{
@@ -97,10 +98,21 @@ if ($res->num_rows > 0) {
                             $sqlVerUsuarios= "SELECT idalumno, CONCAT(al_nombre,' ',al_apP,' ',al_apM) as nombre
                             FROM alumno al JOIN proyecto_alumno proy ON(proy.pa_idalumno = al.idalumno) WHERE proy.pa_idproyect = '$proyecto'";
                             $resVerUs = $con->query($sqlVerUsuarios);
+
+                            $sqlAsignado="SELECT * FROM tarea_a_alumno WHERE r_idtarea = '".$row["idtarea"]."'";
+                                $resAsignado = $con->query($sqlAsignado);
+
+                                $asignado='';
+                                if ($resAsignado->num_rows > 0) {
+                                    while ($rowAsignado = $resAsignado->fetch_assoc()){
+                                        $asignado = $rowAsignado["r_idalumno"];
+                                    }
+                                }
+                                
                             if ($resVerUs->num_rows > 0) {
                             while ($rowVerUs = $resVerUs->fetch_assoc()){
 
-                                if($rowVerUs["idalumno"]==$_SESSION['ID']){
+                                if($rowVerUs["idalumno"]==$asignado){
                                     echo'
                                     <option selected value="'.$rowVerUs["idalumno"].'">'.$rowVerUs["nombre"].'</option>';
                                 }else{
@@ -145,7 +157,7 @@ if ($res->num_rows > 0) {
                     
                     </div>
                     <div class="modal-footer">
-                        <button type="sumbmit" name="editarIncidencia" class="btn btn-primary">Crear</button>
+                        <button type="sumbmit" name="editarIncidencia" class="btn btn-primary">Editar</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
