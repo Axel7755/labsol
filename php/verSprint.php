@@ -71,7 +71,8 @@ if ($res->num_rows > 0) {
                     <div class="row punteado rounded-3 contenido">
                         <div class="col margin0">';
                         $sqlVerInci = "SELECT * FROM `tarea` WHERE sprint_idsprint = '".$row["idsprint"]."'
-                        AND tarea_idtarea IS NULL";
+                        AND tarea_idtarea IS NULL AND ta_spr_idproyect = $proyecto";
+                        //echo $sqlVerInci;
                         $resVerInc = $con->query($sqlVerInci);
                         if ($resVerInc->num_rows > 0) {
                             while ($rowVerInc = $resVerInc->fetch_assoc()){
