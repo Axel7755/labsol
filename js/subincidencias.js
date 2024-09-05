@@ -5,10 +5,7 @@ function removeInput(){
     this.parentElement.remove();
     i--;
 }
-
 var i=0;
-var botonDelSub = document.getElementById("deleteSub");
-botonDelSub.addEventListener("click", removeInput);
 
 /*function addInput(event){
     event.preventDefault();*/
