@@ -69,6 +69,21 @@
     padding: 0;
     margin: auto;
 }
+.incidencia-progreso{
+    background-color: #fff1b0;
+    padding: 0;
+    margin: auto;
+}
+.incidencia-listo{
+    background-color: #d6ffb0;
+    padding: 0;
+    margin: auto;
+}
+.incidencia-generic{
+    background-color: #b0e2ff;
+    padding: 0;
+    margin: auto;
+}
 .margin0{
     margin: 0;
     padding: 0;
