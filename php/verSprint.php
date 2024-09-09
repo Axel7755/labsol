@@ -106,9 +106,11 @@ if ($res->num_rows > 0) {
                                             </li>
                                             <li>
                                                 <a class="dropdown-item" href="#">
-                                                    <label class="form-check-label" for="MisIncidencias-f">
-                                                        Eliminar
-                                                    </label>
+                                                <form method="post">
+                                                <button type="sumbmit" name="eliminarInci" value="'.$rowVerInc["idtarea"].'" class="btn bg-transparent margin0">
+                                                    Eliminar Incidencia
+                                                </button>
+                                                </form>
                                                 </a>
                                             </li>
                                         </ul>

@@ -10,6 +10,7 @@ include "../../php/agregarAlumnoProy.php";
 include "../../php/eliminarMiemProy.php";
 include "../../php/guardarIncidencia.php";
 include "../../php/editarInc.php";
+include "../../php/eliminarInc.php";
 require "../../php/conexion.php";
 ?>
 <!doctype html>
