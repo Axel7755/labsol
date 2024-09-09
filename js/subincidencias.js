@@ -19,19 +19,16 @@ botonesDelSub.forEach(botonDelSub => {
 function addInput(idSprint) {
     const input = document.querySelector(".subincidencias-group" + idSprint);
     //var edicion = idSprint.substring(idSprint.length - 1);
-        if ( esNumerico(input)) {
-            console.log("edlocalizaado!");
-            const elements = input.getElementsByName("ning");
-            if (elements.length === 0) {
-
-                console.log("no existe!");
-                
-            } else {
-                console.log(" existe!");
-                i = elements.value;
-            }
+    if (!esNumerico(idSprint)) {
+        const elements = input.querySelectorAll("[name='ning']");
+        if (elements.length === 0) {
+            
+        } else {
+            i = elements[(elements.length)-1].value;
         }
+    }
     //preventDefault();
+    console.log(" pasa el if!");
     i++;
     const name = document.createElement("input");
     name.type = "text";
@@ -60,12 +57,15 @@ function addInput(idSprint) {
     input.appendChild(flex);
 
     var invi = document.createElement("input");
+    invi.type = "hidden";
+    invi.name = "ning";
+    invi.value = i;
 
     flex.appendChild(name);
     flex.appendChild(labelDesc);
     flex.appendChild(descripcion);
-    flex.appendChild(btn);
     flex.appendChild(invi);
+    flex.appendChild(btn);
 
 }
 

@@ -9,6 +9,7 @@ include "../../php/editarSprints.php";
 include "../../php/agregarAlumnoProy.php";
 include "../../php/eliminarMiemProy.php";
 include "../../php/guardarIncidencia.php";
+include "../../php/editarInc.php";
 require "../../php/conexion.php";
 ?>
 <!doctype html>

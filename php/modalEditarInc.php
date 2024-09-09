@@ -20,12 +20,12 @@ if ($res->num_rows > 0) {
                     
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Nombre de incidencia</label>
-                            <input type="text" class="form-control" name="nomIncidencia" id="exampleInputEmail1" aria-describedby="emailHelp"
-                                placeholder="'.$row["tarea"].'">
+                            <input type="text" class="form-control" name="nomIncidenciaEd" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                value="'.$row["tarea"].'">
                         </div>
                         <div class="mb-3">
                             <label for="t-incidencia" class="form-label">Estado</label>
-                            <select class="form-select" name="estAlIncidencia" aria-label="Default select example" id="t-incidencia">';
+                            <select class="form-select" name="estAlIncidenciaEd" aria-label="Default select example" id="t-incidencia">';
                             $sqlVerEstAl= "SELECT idestadoAl, estadoAl FROM estadoAl WHERE estAl_idproyect = '$proyecto'";
                             $resVerEstAl = $con->query($sqlVerEstAl);
                             if ($resVerEstAl->num_rows > 0) {
@@ -44,7 +44,7 @@ if ($res->num_rows > 0) {
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Descripcion</label>
-                            <textarea name="desIncidencia" id="" cols="45" rows="10">'.$row["descripcion"].'</textarea>
+                            <textarea name="desIncidenciaEd" id="" cols="45" rows="10">'.$row["descripcion"].'</textarea>
                         </div>
                         <div class="subincidencias-group'.$row["idtarea"].'Ed">';
 
@@ -54,9 +54,9 @@ if ($res->num_rows > 0) {
                         if ($resverSubInc->num_rows > 0) {
                             while ($rowverSubInc = $resverSubInc->fetch_assoc()){
                             echo'<div class="flex">
-                                <input type="text" class="form-control" placeholder="'.$rowverSubInc["tarea"].'" name="nombreSub'.$x.'">
+                                <input type="text" class="form-control" value="'.$rowverSubInc["tarea"].'" name="nombreSub'.$x.'">
                                 <label>Descripcion</label>
-                                <textarea cols="45" rows="10" class="form-control" name="descrip'.$x.'"></textarea>
+                                <textarea cols="45" rows="10" class="form-control" name="descrip'.$x.'"> '.$rowverSubInc["descripcion"].'</textarea>
                                 <a class="delete deleteSub">×</a>
                                 <input type="hidden" name="ning" value="'.$x.'">
                             </div>';
@@ -71,7 +71,7 @@ if ($res->num_rows > 0) {
                         </div>
                         <div class="mb-3">
                             <label for="t-incidencia" class="form-label">Informador</label>
-                            <select class="form-select" name="informadorIncidencia" aria-label="Default select example" id="t-incidencia">';
+                            <select class="form-select" name="informadorIncidenciaEd" aria-label="Default select example" id="t-incidencia">';
                                 $sqlVerUsuarios= "SELECT idalumno, CONCAT(al_nombre,' ',al_apP,' ',al_apM) as nombre
                                 FROM alumno al JOIN proyecto_alumno proy ON(proy.pa_idalumno = al.idalumno) WHERE proy.pa_idproyect = '$proyecto'";
                                 $resVerUs = $con->query($sqlVerUsuarios);
@@ -94,7 +94,7 @@ if ($res->num_rows > 0) {
                         </div>
                         <div class="mb-3">
                             <label for="t-incidencia" class="form-label">Responsable</label>
-                            <select class="form-select" name="responsableIncidencia" aria-label="Default select example" id="t-incidencia">';
+                            <select class="form-select" name="responsableIncidenciaEd" aria-label="Default select example" id="t-incidencia">';
                             $sqlVerUsuarios= "SELECT idalumno, CONCAT(al_nombre,' ',al_apP,' ',al_apM) as nombre
                             FROM alumno al JOIN proyecto_alumno proy ON(proy.pa_idalumno = al.idalumno) WHERE proy.pa_idproyect = '$proyecto'";
                             $resVerUs = $con->query($sqlVerUsuarios);
@@ -127,7 +127,7 @@ if ($res->num_rows > 0) {
                         </div>
                         <div class="mb-3">
                             <label for="t-incidencia" class="form-label">Prioridad</label>
-                            <select class="form-select" name="prioriIncidencia" aria-label="Default select example" id="t-incidencia">
+                            <select class="form-select" name="prioriIncidenciaEd" aria-label="Default select example" id="t-incidencia">
                                 <option>Urgente</option>
                                 <option>Alta</option>
                                 <option selected>Media</option>
@@ -137,7 +137,7 @@ if ($res->num_rows > 0) {
                         </div>
                         <div class="mb-3">
                             <label for="t-incidencia" class="form-label">Sprint</label>
-                            <select class="form-select" name="sprintIcidencidencia" aria-label="Default select example" id="t-incidencia">';
+                            <select class="form-select" name="sprintIcidencidenciaEd" aria-label="Default select example" id="t-incidencia">';
                             $sqlVerSrpintsSubIn = "SELECT * FROM sprint WHERE spr_idproyect = '$proyecto'";
                             $resSubIn = $con->query($sqlVerSrpintsSubIn);
                             if ($resSubIn->num_rows > 0) {
@@ -157,7 +157,7 @@ if ($res->num_rows > 0) {
                     
                     </div>
                     <div class="modal-footer">
-                        <button type="sumbmit" name="editarIncidencia" class="btn btn-primary">Editar</button>
+                        <button type="sumbmit" name="editarIncidencia" value="'.$row["idtarea"].'" class="btn btn-primary">Editar</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                     </div>
                 </form>

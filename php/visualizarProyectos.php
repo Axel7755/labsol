@@ -23,7 +23,7 @@ if ($res->num_rows > 0) {
               <div class="container text-center">
                 <div class="row">
                   <div class="col left">
-                    <img class="img-psrc" src="' . $row["img"] . '">
+                    <img class="img-psrc" src="' . $row["img"] . '" alt=" ">
                   </div>
                   <div class="col-8 left">
                     <p class="tittle-p">' . $row["nombrePr"] . '</p>
