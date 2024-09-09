@@ -127,12 +127,51 @@ if ($res->num_rows > 0) {
                         </div>
                         <div class="mb-3">
                             <label for="t-incidencia" class="form-label">Prioridad</label>
-                            <select class="form-select" name="prioriIncidenciaEd" aria-label="Default select example" id="t-incidencia">
-                                <option>Urgente</option>
-                                <option>Alta</option>
-                                <option selected>Media</option>
-                                <option>Baja</option>
-                                <option>Muy baja</option>
+                            <select class="form-select" name="prioriIncidenciaEd" aria-label="Default select example" id="t-incidencia">';
+                            $prioridad = $row["prioridad"];
+                            switch ($prioridad){
+                                case 'Urgente':
+                                    echo'
+                                        <option selected>Urgente</option>
+                                        <option>Alta</option>
+                                        <option>Media</option>
+                                        <option>Baja</option>
+                                        <option>Muy baja</option>';
+                                    break;
+                                case 'Alta':
+                                    echo'
+                                        <option>Urgente</option>
+                                        <option selected>Alta</option>
+                                        <option>Media</option>
+                                        <option>Baja</option>
+                                        <option>Muy baja</option>';
+                                    break;
+                                case 'Media':
+                                    echo'
+                                        <option>Urgente</option>
+                                        <option>Alta</option>
+                                        <option selected>Media</option>
+                                        <option>Baja</option>
+                                        <option>Muy baja</option>';
+                                    break;
+                                case 'Baja':
+                                    echo'
+                                        <option>Urgente</option>
+                                        <option>Alta</option>
+                                        <option>Media</option>
+                                        <option selected>Baja</option>
+                                        <option>Muy baja</option>';
+                                    break;
+                                case 'Muy baja':
+                                    echo'
+                                        <option>Urgente</option>
+                                        <option>Alta</option>
+                                        <option>Media</option>
+                                        <option>Baja</option>
+                                        <option selected>Muy baja</option>';
+                            }
+                            echo'
+                               
                             </select>
                         </div>
                         <div class="mb-3">
