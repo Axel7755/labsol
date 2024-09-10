@@ -134,36 +134,15 @@ require "../../php/conexion.php";
     </div>
 
     <div class="container-addCaja">
-        <button type="button" id="agregarCaja" class="btn btn-info">
+        <button type="button" id="agregarCaja" class="btn btn-blanco">
             <ion-icon id="plus" name="add-circle-outline"></ion-icon>
         </button>
     </div>
 
     <div class="container-board">
-
-        <div class="box cajas">
-            <input type="text" class="nuevoTitulo" placeholder="Por hacer" value="Por hacer" readonly>
-        </div>
-
-        <div class="box cajas">
-
-            <input type="text" class="nuevoTitulo" placeholder="En curso" value="En curso" readonly>
-
-            <div class="list" draggable="true">
-                <ion-icon name="hand-left-outline"></ion-icon>
-                List item 1
-            </div>
-            <div class="list" draggable="true">
-                <ion-icon name="hand-left-outline"></ion-icon>
-                List item 2
-            </div>
-        </div>
-
-        <div class="box cajas paloma">
-            <input type="text" class="nuevoTitulo" placeholder="Listo" value="Listo" readonly>
-            <ion-icon class="paloma" name="checkmark-outline"></ion-icon>
-
-        </div>
+                <?php
+                    include "../../php/verEstadosInc.php"
+                ?>
     </div>
 
     <!-- Modal agregar alumno -->
