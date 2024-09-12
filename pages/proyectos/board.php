@@ -3,6 +3,8 @@ session_start();
 include "../../php/sessionestado.php";
 include "../../php/agregarAlumnoProy.php";
 include "../../php/eliminarMiemProy.php";
+
+include "../../php/editarInc.php";
 //echo"antes";
 
 require "../../php/conexion.php";
@@ -218,10 +220,19 @@ require "../../php/conexion.php";
             </div>
         </div>
     </div>
+     <!-- Modal editar incidencia -->
+     <?php
+    include "../../php/modalEditarInc.php";
+    ?>
 
 </body>
 
 <!-- Scripts de iconos 'ionicons' -->
+
+<script src="https://code.jquery.com/jquery-3.7.1.js" 
+integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+			  crossorigin="anonymous"></script>
+<script src="../../js/subincidencias.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <!--My script-->

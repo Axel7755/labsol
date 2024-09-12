@@ -147,3 +147,36 @@ p.tittle-board {
     color: #fff;
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Ajusta los valores según sea necesario */
 }
+
+.add-sprint-button{
+    border: none;
+    background: #d4d4d4;
+    margin: 0;
+}
+.add-sprint-button:hover{
+    border: none;
+    background: #c4c4c4;
+    
+}
+.delete{
+    text-decoration: none;
+    display: inline-block;
+    background: red;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 45px;
+    height: 30px;
+    color: white;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.element{
+    font-size: 1.2em;
+    margin: 2px 0px 2px 0px;
+    
+}
