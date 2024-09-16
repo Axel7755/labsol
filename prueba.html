@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector de Hora</title>
+    <style>
+        .time-picker {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select {
+            padding: 8px;
+            margin: 5px;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #ff5733;
+            box-shadow: 0 0 5px #ff5733;
+        }
+    </style>
+</head>
+<body>
+    <div class="time-picker">
+        <label for="start-time">Hora de inicio:</label>
+        <select id="start-time">
+            <!-- Opciones de hora de inicio se generan con JavaScript -->
+        </select>
+        <label for="end-time">Hora de fin:</label>
+        <select id="end-time">
+            <!-- Opciones de hora de fin se generan con JavaScript -->
+        </select>
+    </div>
+
+    <script>
+        // Función para generar opciones de hora
+        function generateTimeOptions(selectElement, startHour, endHour) {
+            for (let i = startHour; i <= endHour; i++) {
+                for (let j = 0; j < 60; j += 15) { // Incremento en intervalos de 15 minutos
+                    const hour = i.toString().padStart(2, '0');
+                    const minute = j.toString().padStart(2, '0');
+                    const time = `${hour}:${minute}`;
+                    const option = new Option(time, time);
+                    selectElement.appendChild(option);
+                }
+            }
+        }
+
+        // Obtener los elementos select y generar las opciones de hora
+        const startTimeSelect = document.getElementById("start-time");
+        const endTimeSelect = document.getElementById("end-time");
+
+        generateTimeOptions(startTimeSelect, 9, 18); // Horas disponibles de 9:00 AM a 6:00 PM
+        generateTimeOptions(endTimeSelect, 9, 18); // Horas disponibles de 9:00 AM a 6:00 PM
+    </script>
+</body>
+</html>
